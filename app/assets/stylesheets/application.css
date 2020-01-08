@@ -13,3 +13,195 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: sans-serif;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  list-style: none;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+button {
+    /* border: black 1px solid; */
+    cursor: pointer;
+    font-size: 10px;
+}
+
+/* .app {
+    display: flex;
+    flex-direction: column;
+} */
+
+.main {
+    /* background-color: rgb(153, 156, 158); */
+    z-index: -1;
+    /* background-image: url("../images/couchbg.jpg"); */
+    background-color: #287FB8;
+    /* margin-top: 50px; */
+}
+
+
+/* navbar */
+
+.navbar {
+    display: flex;
+    position: fixed;
+    box-shadow: 0 3px 6px 0  rgb(0,0,0,0.25);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    
+}
+
+.logo {
+    height: 70px;
+    width: 270px;
+    padding: 5px 60px;
+}
+
+.button {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+    margin: 7px;
+    /* width: 50px; */
+}
+
+.button.join {
+    background-color: #287FB8;
+    border: 1px solid #287FB8;
+    color: #fff;
+}
+.button.join:hover {
+    background-color: #2371a3;
+    border: 1px solid #2371a3;
+}
+
+.button.login {
+    border: 1px solid #287FB8;
+    color: #287FB8;
+}
+
+.button.login:hover {
+    background-color: #f2f2f2;
+}
+
+.navbarright {
+    display: flex;
+    padding-right: 80px;
+    font-size: 10px;
+    align-items: center;
+}
+
+.navicon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navicon:hover {
+    color: orangered;
+}
+
+.naviconimg {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px 3px 20px;
+}
+
+label {
+    justify-content: center;
+}
+
+/* signup form */
+h2 {
+    text-align: center;
+}
+
+.errors {
+ color: red
+}
+
+.signup-form-container {
+    /* width: 300px; */
+    padding: 60px 60px;
+    /* height: 1000px; */
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.signup-form-box {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px black solid;
+    padding: 30px;
+}
+
+.signup-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-input {
+    border-radius: 4px;
+    padding: 18px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    font-size: 15px;
+    /* width: 80%; */
+    width: 300px;
+}
+
+.sessionbuttons {
+    display: flex;
+
+}
+
+.session-submit {
+    background-color: rgb(255, 114, 71);
+    color: white;
+    border-radius: 4px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+    padding: 15px 50px;
+    margin: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.session-submit:hover {
+    background-color: #2371a3;
+}
+
+.session-submit.demo {
+    background-color: #287FB8;
+}
+
+.session-submit.demo:hover {
+    background-color: #2371a3;
+}

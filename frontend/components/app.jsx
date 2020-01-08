@@ -1,21 +1,21 @@
 import React from "react";
 import NavBarContainer from "./nav_bar/nav_bar_container";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 
 const App = () => (
-    <div>
-        <header>
-            <h1>CouchHopping</h1>
+    <div className="app">
             <NavBarContainer />
-        </header>
-
-        <Switch>
-            <Route exact path="/login" component={LoginFormContainer} />
-            <Route exact path="/signup" component={SignupFormContainer} />
-        </Switch>
+        <div className="main">
+            <Switch>
+                <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <AuthRoute exact path="/login" component={LoginFormContainer} />
+                <AuthRoute exact path="/" component={SignupFormContainer} />
+            </Switch>
+        </div>
     </div>
 );
 
