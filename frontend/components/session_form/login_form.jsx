@@ -1,18 +1,15 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
             email: '',
             password: '',
-            city_id: 0,
-            status: 'Accepting Guests'
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
-        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
     }
 
     update(field) {
@@ -25,12 +22,12 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.clearSessionErrors();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(() => this.props.closeModal());
         this.setState({
-            name: '',
             email: '',
             password: ''
         });
+        
     }
 
     handleDemo(e) {
@@ -39,25 +36,26 @@ class SessionForm extends React.Component {
             email: 'demo@email.com',
             password: 123456
         }
-        this.props.processDemoForm(user);
+        this.props.processForm(user);
         this.setState({
             name: '',
             email: '',
             password: ''
         });
+        this.props.closeModal();
     }
 
-    handleOpenModal() {
+    handleCloseModal() {
         this.props.clearSessionErrors();
-        this.props.openModal();
+        this.props.closeModal();
     }
 
     renderErrors() {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                     <li key={`error-${i}`}>
-                            {error}
+                    <li key={`error-${i}`}>
+                        {error}
                     </li>
                 ))}
             </ul>
@@ -66,63 +64,55 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    <h2>{(this.props.formType === "signup") ? "Sign Up With Email" : "Log In"}</h2><br/>
+            <div className="login-form-container">
+                <form onSubmit={this.handleSubmit} className="login-form-box">
+                    <div onClick={this.handleCloseModal} className="close-x">&#x2715;</div>
+                    <h3 className="loginlabel">Log in to CouchHopping</h3><br />
                     <div className="errors">{this.renderErrors()}</div>
-                    <div className="signup-form">
-                        <br /> 
-                        <label>Name<br/>
-                            <input type="text"
-                                value={this.state.name}
-                                onChange={this.update('name')}
-                                className="signup-input"
-                            />
-                        </label>
+                    <div className="login-form">
                         <br />
-                        <label>Email<br />
+                        <label>
                             <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
-                                className="signup-input"
+                                className="login-input"
+                                placeholder="Email"
                             />
                         </label>
                         <br />
-                        <label>Password<br />
+                        <label>
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
-                                className="signup-input"
+                                className="login-input"
+                                placeholder="Password"
                             />
                         </label>
                         <br />
-                        <div className="sessionbuttons">
+                        <div className="loginformbuttons">
                             <label>
-                                <input 
-                                    className="session-submit" 
-                                    type="submit" 
-                                    value={(this.props.formType === "signup") ? "Join" : "Log In"}  />
+                                <input
+                                    className="session-submit"
+                                    type="submit"
+                                    value="Log In" 
+                                />
                                 <br />
                             </label>
                             <label>
-                                <input 
+                                <input
                                     type="button"
-                                    className="session-submit demo"
+                                    className="login-submit demo"
                                     onClick={this.handleDemo}
                                     value="Demo User" />
                             </label>
                         </div>
+                        <h5>Don't have an account?</h5>
+                        <div onClick={this.handleCloseModal}>{this.props.signupLink}</div>
                     </div>
                 </form>
-                <div className="loginsection">
-                <br/>
-                <div>Already a member?</div>
-                <div className="loginlink" onClick={this.props.openModal}>Login</div>
-                </div>
-           
             </div>
         );
     }
 }
 
-export default SessionForm;
+export default LoginForm;

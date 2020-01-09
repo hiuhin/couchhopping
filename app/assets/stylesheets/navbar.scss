@@ -12,58 +12,73 @@
 }
 
 .logo {
-    height: 70px;
-    width: 270px;
-    padding: 5px 60px;
+    height: 50px;
+    width: 230px;
+    padding: 8px 60px;
 }
 
-.button {
+.navbarjoin {
     border-radius: 3px;
     cursor: pointer;
     padding: 8px 12px;
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 15px;
     margin: 7px;
-    /* width: 50px; */
-}
-
-.button.join {
     background-color: #287FB8;
     border: 1px solid #287FB8;
     color: #fff;
 }
-.button.join:hover {
-    background-color: #2371a3;
-    border: 1px solid #2371a3;
+
+.navbarjoin:hover {
+    background-color: #3c5e94;
+    border: 1px solid #2354a3;
 }
 
-.button.login {
+.navbarlogin {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin: 7px;
+    font-size: 15px;
+    background-color: white;
     border: 1px solid #287FB8;
     color: #287FB8;
 }
 
-.button.login:hover {
-    background-color: #f2f2f2;
+button {
+    font-size: 15px;
+    cursor: pointer;
 }
+
+button:hover {
+    background-color: #e7e7e7;
+    // border: 1px solid #2354a3;
+}
+
+// .narbarlogin:hover {
+//     background-color: #e7e7e7;
+//     border: 1px solid #2354a3;
+// }
 
 .navbarright {
     display: flex;
-    padding-right: 80px;
+    padding-right: 60px;
     font-size: 10px;
     align-items: center;
 }
 
-.navicon {
+.navbaricon {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.navicon:hover {
+.navbaricon:hover {
     color: orangered;
 }
 
-.naviconimg {
+.navbariconimg {
     width: 40px;
     height: 40px;
     margin: 0 20px 3px 20px;

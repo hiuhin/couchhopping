@@ -4,16 +4,22 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
+        this.handleLogin = this.handleLogin.bind(this);
         // this.addActiveClass = this.addActiveClass.bind(this);
-        this.state = {
-            active: false,
-        };
+        // this.state = {
+        //     active: false,
+        // };
     }
 
-    toggleClass() {
-        const currentState = this.state.active;
-        this.setState({ active: !currentState });
-    };
+    // toggleClass() {
+    //     const currentState = this.state.active;
+    //     this.setState({ active: !currentState });
+    // };
+
+    handleLogin() {
+        this.props.clearSessionErrors();
+        this.props.login();
+    }
 
     render() {
         const { currentUser, logout } = this.props;
@@ -21,13 +27,17 @@ class NavBar extends React.Component {
         const sessionLinks = () => (
             <div className="navbar">
                 <div>
-                    <Link to="/" className="header-link">
+                    <Link to="/">
                         <img className="logo" src={window.logoURL} />
                     </Link>
                 </div>
                 <div className="navbarright">
-                    <Link to="/signup" className="button join">Join</Link>
-                    <Link to="/login" className="button login">Login</Link>
+                    <Link to="/signup" className="navbarjoin">Join</Link>
+                    <button
+                        className="navbarlogin"
+                        onClick={this.handleLogin}>
+                        Login
+                    </button>
                 </div>
             </div>
         );
@@ -41,16 +51,16 @@ class NavBar extends React.Component {
                 </div>
                 <div className="navbarright">
                     <h2>Welcome, {currentUser.name}!</h2>
-                    <label className="navicon">
-                        <img className="naviconimg" src={window.earthURL} />
+                    <label className="navbaricon">
+                        <img className="navbariconimg" src={window.earthURL} />
                         Dashboard
                     </label>               
-                    <label className="navicon">
-                        <img className="naviconimg" src={window.catURL} />
+                    <label className="navbaricon">
+                        <img className="navbariconimg" src={window.catURL} />
                         Profile
                     </label>
-                    <label className="navicon">
-                        <img className="naviconimg" src={window.settingURL}/>
+                    <label className="navbaricon">
+                        <img className="navbariconimg" src={window.settingURL}/>
                         Setting
                     </label>
                     <button onClick={logout}>Log Out</button>

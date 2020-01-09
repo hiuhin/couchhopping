@@ -5,14 +5,15 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
+import Modal from './modal/modal';
 
 const App = () => (
     <div className="app">
+            <Modal />
             <NavBarContainer />
         <div className="main">
             <Switch>
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/" component={SignupFormContainer} />
             </Switch>
         </div>

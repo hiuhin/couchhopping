@@ -1,0 +1,87 @@
+.login-form-container {
+    width: 300vw;
+    height: 100vh;
+    padding: 60px 60px;
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.login-form-box {
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px black solid;
+    padding: 30px;
+    height: 490px;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.close-x {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    text-align: right;
+    color: grey;
+    font-size: large;
+    cursor: pointer;
+}
+
+.loginlabel {
+    color: rgb(119, 118, 118);
+}
+
+.login-input {
+    border-radius: 4px;
+    padding: 18px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    font-size: 15px;
+    /* width: 80%; */
+    width: 300px;
+}
+
+.loginformbuttons {
+    display: flex;
+
+}
+
+.login-submit {
+    background-color: rgb(255, 114, 71);
+    color: white;
+    border-radius: 4px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+    padding: 15px 50px;
+    margin: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.login-submit:hover {
+    background-color: #2371a3;
+}
+
+.login-submit.demo {
+    background-color: #287FB8;
+}
+
+.login-submit.demo:hover {
+    background-color: #2371a3;
+}
+
+.loginformjoin {
+    border: rgb(29, 73, 155) 1px solid;
+    color: #287FB8;
+    padding: 8px 35px;
+    border-radius: 4px;
+}

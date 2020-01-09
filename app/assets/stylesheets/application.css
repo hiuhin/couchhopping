@@ -37,20 +37,9 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-button {
-    /* border: black 1px solid; */
-    cursor: pointer;
-    font-size: 10px;
-}
-
-/* .app {
-    display: flex;
-    flex-direction: column;
-} */
-
 .main {
     /* background-color: rgb(153, 156, 158); */
-    z-index: -1;
+    /* z-index: -1; */
     /* background-image: url("../images/couchbg.jpg"); */
     background-color: #287FB8;
     /* margin-top: 50px; */
@@ -74,7 +63,9 @@ h2 {
     /* height: 1000px; */
     padding-top: 200px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
 
 }
 
@@ -131,4 +122,21 @@ h2 {
 
 .session-submit.demo:hover {
     background-color: #2371a3;
+}
+
+.loginsection {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.loginlink {
+    color: white;
+    background-color: #287FB8;
+    padding: 5px 0;
+    border-radius: 4px;
+}
+
+.loginlink:hover {
+    background-color: rgb(34, 108, 158);
 }
