@@ -7,157 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
-
-u1 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.matz,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 1
-)
-u2 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Not Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.matz,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 2
-)
-u3 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.matz,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English, Spanish",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 3
-)
-u4 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.matz,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 4
-)
-u5 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.matz,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English, French",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 5
-)
-u6 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Not Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.famous_last_words,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 6
-)
-u7 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.famous_last_words,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 7
-)
-u8 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.famous_last_words,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English, Chinese",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 8
-)
-u9 = User.create!(
-    email: Faker::Internet.email,
-    name: Faker::Name.name,
-    status: 'Not Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: Faker::Job.title,
-    about_me: Faker::Quote.famous_last_words,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 9
-)
-u10 = User.create!(
-    email: 'demo@email.com',
-    name: 'Demo User',
-    status: 'Accepting Guests',
-    age: Faker::Number.within(range: 18..80),
-    job: "Student",
-    about_me: Faker::Quote.matz,
-    city_id: Faker::Number.within(range: 1..5),
-    password: '123456',
-    gender: Faker::Gender.binary_type,
-    language: "English",
-    book: Faker::Book.title,
-    movie: Faker::Movie.quote,
-    spot_id: 10
-)
+Spot.delete_all
+City.delete_all
 
 s1 = Spot.create!(
     max_guests: Faker::Number.within(range: 1..3),
@@ -249,6 +100,8 @@ s10 = Spot.create!(
     description: "You will be my roommate if you stay. I can only host one person per evening for now with my very limited space (used to host couples), please mention you check my living situation. The fold out futon will be your bed with sheets and blankets. It is next to my bed. The downside is you don't have much privacy, also please mention that you are clean and won’t bring bedbugs to my futon. !!!Please mention you use deodorant or perfume and not snore!!! "
 )
 
+
+
 c1 = City.create!(
     name: "San Francisco"
 )
@@ -273,6 +126,7 @@ c6 = City.create!(
     name: "Atlanta"
 )
 
+
 d1 = DReq.create!(
     user_id: 1,
     host_id: 2,
@@ -282,17 +136,169 @@ d1 = DReq.create!(
     message: ""
 )
 
-c1.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/sf.jpg"), filename: "sf.jpg")
-c2.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/la.jpg"), filename: "la.jpg")
-c3.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/nyc.jpg"), filename: "nyc.jpg")
-c4.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/austin.jpg"), filename: "austin.jpg")
-c5.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/chicago.jpg"), filename: "chicago.jpg")
-c6.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/atlanta.jpeg"), filename: "atlanta.jpeg")
+c1.photo.attach( io: File.open("#{Rails.root}/db/images/sf.jpg"), filename: "sf.jpg")
+c2.photo.attach( io: File.open("#{Rails.root}/db/images/la.jpg"), filename: "la.jpg")
+c3.photo.attach( io: File.open("#{Rails.root}/db/images/nyc.jpg"), filename: "nyc.jpg")
+c4.photo.attach( io: File.open("#{Rails.root}/db/images/austin.jpg"), filename: "austin.jpg")
+c5.photo.attach( io: File.open("#{Rails.root}/db/images/chicago.jpg"), filename: "chicago.jpg")
+c6.photo.attach( io: File.open("#{Rails.root}/db/images/atlanta.jpeg"), filename: "atlanta.jpeg")
 
 
-c1.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/sf-icon.jpeg"), filename: "sf-icon.jpeg")
-c2.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/la-icon.jpg"), filename: "la-icon.jpg")
-c3.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/ny-icon.jpg"), filename: "ny-icon.jpg")
-c4.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/austin-icon.jpg"), filename: "austin-icon.jpg")
-c5.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/chicago-icon.jpg"), filename: "chicago-icon.jpg")
-c6.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/atlanta-icon.jpg"), filename: "atlanta-icon.jpg")
+c1.icon.attach( io: File.open("#{Rails.root}/db/images/sf-icon.jpeg"), filename: "sf-icon.jpeg")
+c2.icon.attach( io: File.open("#{Rails.root}/db/images/la-icon.jpg"), filename: "la-icon.jpg")
+c3.icon.attach( io: File.open("#{Rails.root}/db/images/ny-icon.jpg"), filename: "ny-icon.jpg")
+c4.icon.attach( io: File.open("#{Rails.root}/db/images/austin-icon.jpg"), filename: "austin-icon.jpg")
+c5.icon.attach( io: File.open("#{Rails.root}/db/images/chicago-icon.jpg"), filename: "chicago-icon.jpg")
+c6.icon.attach( io: File.open("#{Rails.root}/db/images/atlanta-icon.jpg"), filename: "atlanta-icon.jpg")
+
+
+u1 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.matz,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s1.id
+)
+u2 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Not Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.matz,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s2.id
+)
+u3 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.matz,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English, Spanish",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s3.id
+)
+u4 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.matz,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s4.id
+)
+u5 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.matz,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English, French",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s5.id
+)
+u6 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Not Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.famous_last_words,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s6.id
+)
+u7 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.famous_last_words,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s7.id
+)
+u8 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.famous_last_words,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English, Chinese",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s8.id
+)
+u9 = User.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    status: 'Not Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: Faker::Job.title,
+    about_me: Faker::Quote.famous_last_words,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s9.id
+)
+u10 = User.create!(
+    email: 'demo@email.com',
+    name: 'Demo User',
+    status: 'Accepting Guests',
+    age: Faker::Number.within(range: 18..80),
+    job: "Student",
+    about_me: Faker::Quote.matz,
+    city_id: [c1,c2,c3,c4,c5,c6].sample.id,
+    password: '123456',
+    gender: Faker::Gender.binary_type,
+    language: "English",
+    book: Faker::Book.title,
+    movie: Faker::Movie.quote,
+    spot_id: s10.id
+)
