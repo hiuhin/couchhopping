@@ -17,9 +17,8 @@ class CityShow extends React.Component {
 
     render() {
         if (this.props.city === undefined) return null;
-        const { currentUser, hosts} = this.props;
-        const selectedHosts = [];
-        hosts.map(host => currentUser.id !== host.id && host.id !== 10 ? selectedHosts.push(host) : selectedHosts.push([]))
+        const { currentUser, hosts, city} = this.props;
+        const selectedHosts = hosts.filter(host => host.city_id === city.id && host.id !== currentUser.id)
         return (
             <div className="cityshow">
                 <img src={this.props.city.photoURL} className="citybanner"/> 
@@ -27,7 +26,7 @@ class CityShow extends React.Component {
                 <br/>
                 <header>Available Hosts in {this.props.city.name}</header>
                 <div className="hosts">
-                    {hosts.map(host => (
+                    {selectedHosts.map(host => (
                         <Link to={`/profile/${host.id}`}><li><FontAwesomeIcon icon={faUserCircle} /><br/>{host.name}</li></Link>
                     ))}
                 </div>
