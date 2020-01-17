@@ -1,0 +1,54 @@
+.dashboard {
+    padding: 90px 100px;
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboardside {
+    background-color: white;
+    box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+    border-radius: 4px;
+    padding: 15px;
+    margin: 0 10px;
+    text-align: center;
+    width: 500px;
+}
+
+.explore {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+}
+
+.explore li {
+    position: relative;
+    padding: 10px;
+}
+
+.cityblock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.picture-link {
+    display: flex;
+}
+
+.cityname {
+    position: absolute;
+    top: 210px;
+    left: 25px;
+    color: white;
+    font-size: 22px;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;    
+}
+
+.cityicon {
+    object-fit: cover;
+    object-position: 20% 0;
+    width: 240px;
+    height: 240px;
+}

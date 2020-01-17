@@ -1,0 +1,59 @@
+.profileformbox {
+    padding: 90px 100px;
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileform {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 400px;
+    border-radius: 4px;
+    margin: 30px 30px;
+    padding: 30px 80px;
+    padding-bottom: 115px;
+    position: relative;
+}
+
+.profileform label {
+    padding: 10px;
+}
+
+.profileform input {
+    border: 1px solid grey;
+    padding: 5px;
+    margin: 10px;
+    font-size: 15px;
+    width: 320px;
+}
+
+.profileform select {
+    margin: 10px;
+    padding: 5px;
+    font-size: 15px;
+    width: 320px;
+    cursor: pointer;
+}
+
+.profileform textarea {
+    border: 1px solid grey;
+    font-size: 15px;
+    padding: 5px;
+    margin: 10px;
+    width: 320px;
+    height: 100px;
+}
+
+.profileform button {
+    background-color: rgb(53, 120, 182);
+    cursor: pointer;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    top: 745px;
+    right: 132px;
+}

@@ -1,0 +1,14 @@
+<div className="explore">
+                <ul style={{display:"flex"}}>
+                    {this.props.cities.map(city => (
+                        <div className="cityblock">
+                            <Link to={`/cities/${city.id}`} className="picture-link">
+                                <li key={city.id}>
+                                    <span className="cityname">{city.name}</span>
+                                    <img src={city.iconURL} className="cityicon" />
+                                </li>
+                            </Link>
+                        </div>
+                    ))}
+                </ul>
+            </div>

@@ -49,21 +49,28 @@ class NavBar extends React.Component {
                         <img className="logo" src={window.logoURL} />
                     </Link>
                 </div>
+
                 <div className="navbarright">
-                    <h2>Welcome, {currentUser.name}!</h2>
                     <label className="navbaricon">
-                        <img className="navbariconimg" src={window.earthURL} />
-                        Dashboard
+                        <div className="navbarlink">
+                            <Link to="/dashboard">
+                            <img className="navbariconimg" src={window.earthURL} />
+                            <div>Dashboard</div>
+                            </Link>
+                        </div>
                     </label>               
                     <label className="navbaricon">
-                        <img className="navbariconimg" src={window.catURL} />
-                        Profile
+                        <div className="navbarlink">
+                            <Link to={`/profile/${currentUser.id}`}>
+                            <img className="navbariconimg" src={window.catURL} />
+                            <div>Profile</div>
+                            </Link>
+                        </div>
                     </label>
                     <label className="navbaricon">
-                        <img className="navbariconimg" src={window.settingURL}/>
-                        Setting
+                        <img className="navbariconimg" onClick={logout} src={window.settingURL}/>
+                        Log Out
                     </label>
-                    <button onClick={logout}>Log Out</button>
                 </div>
             </div>
         );

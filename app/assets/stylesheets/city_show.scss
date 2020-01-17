@@ -1,0 +1,45 @@
+.cityshow {
+    padding: 60px 0;
+    background-color: rgb(221, 221, 221);  
+    position: relative;
+}
+
+.citybanner {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    // object-position: 0 0;   
+}   
+
+.citytitle {
+    position: absolute;
+    top: 290px;
+    left: 50px;
+    color: white;
+    font-size: 40px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.hosts {
+    display: flex;
+    justify-content: center;
+}
+
+.hosts li{
+    border: black;
+    padding: 20px;
+    margin: 20px;
+    align-items: center;
+    text-align: center;
+    svg {
+        font-size: 100px;
+        padding: 10px;
+    }  
+}
+
+
+.cityshow header {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}

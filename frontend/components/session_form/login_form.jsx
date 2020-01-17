@@ -27,12 +27,12 @@ class LoginForm extends React.Component {
             email: '',
             password: ''
         });
-        
+
     }
 
     handleDemo(e) {
         const user = {
-            name: 'Demo',
+            name: 'Demo User',
             email: 'demo@email.com',
             password: 123456
         }
@@ -67,7 +67,7 @@ class LoginForm extends React.Component {
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div onClick={this.handleCloseModal} className="close-x">&#x2715;</div>
-                    <h3 className="loginlabel">Log in to CouchHopping</h3><br />
+                    <h3>Log in to CouchHopping</h3><br />
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="login-form">
                         <br />
@@ -92,9 +92,9 @@ class LoginForm extends React.Component {
                         <div className="loginformbuttons">
                             <label>
                                 <input
-                                    className="session-submit"
+                                    className="login-submit"
                                     type="submit"
-                                    value="Log In" 
+                                    value="Log In"
                                 />
                                 <br />
                             </label>
@@ -103,7 +103,7 @@ class LoginForm extends React.Component {
                                     type="button"
                                     className="login-submit demo"
                                     onClick={this.handleDemo}
-                                    value="Demo User" />
+                                    value="Demo" />
                             </label>
                         </div>
                         <h5>Don't have an account?</h5>

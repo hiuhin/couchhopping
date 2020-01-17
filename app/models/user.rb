@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    attr_reader :password 
+    attr_reader :password
 
     validates :email, :name, :status, :password_digest, :session_token, :city_id, presence: true
     validates :email, uniqueness: true
@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    # belongs_to :city
+    belongs_to :city
+    has_one :spot
     
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -32,4 +33,5 @@ class User < ApplicationRecord
     def ensure_session_token
         self.session_token ||= SecureRandom.urlsafe_base64
     end
+
 end

@@ -1,9 +1,48 @@
 class Api::UsersController < ApplicationController
-    def create
-        @user = User.new(user_params)
+    def index
+       
+        @users = User.where(city_id: params[:city_id])
+    end
 
+    def create
+        # cityint = params[:user][:city_id].to_i
+
+        # @user = User.new(email: params[:user][:email], status: params[:user][:status], name: params[:user][:name], password: params[:user][:password], city_id: cityint)
+
+        @user = User.new(user_params)
         if @user.save
             login(@user)
+
+            spot = Spot.create(
+                max_guests: 1,
+                kid_friendly: true,
+                pet_friendly: true,
+                smoking: true, 
+                sleeping_arrangement: "shared room",
+                description: "NA",
+                user_id: @user.id
+            )
+
+            @user.spot_id = spot.id
+            @user.save
+
+            render "api/users/show"
+
+        else
+            render json: @user.errors.full_messages, status: 422
+        end
+
+        
+    end
+
+    def show
+        @user = User.find_by(id: params[:id])
+    end
+
+    def update
+        @user = User.find_by(id: params[:id])
+
+        if @user.update(user_params)
             render "api/users/show"
         else
             render json: @user.errors.full_messages, status: 422
@@ -13,6 +52,6 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :name, :status, :password, :age, :job, :about_me, :city_id)
+        params.require(:user).permit(:email, :name, :status, :password, :age, :job, :city_id, :about_me, :gender, :language, :book, :movie)
     end
 end

@@ -1,0 +1,11 @@
+.profileside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 4px;
+    svg {
+        font-size: 220px;
+    }
+}

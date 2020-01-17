@@ -13,8 +13,14 @@
     background-color: #fff;
     border-radius: 4px;
     border: 1px black solid;
-    padding: 30px;
-    height: 490px;
+    padding: 30px 50px;
+    height: 450px;
+}
+
+.login-form-box h3 {
+    color: rgb(119, 118, 118);
+    margin-top: 25px;
+    margin-bottom: 0px;
 }
 
 .login-form {
@@ -26,15 +32,11 @@
 .close-x {
     position: absolute;
     top: 8px;
-    right: 8px;
+    right: 14px;
     text-align: right;
     color: grey;
     font-size: large;
     cursor: pointer;
-}
-
-.loginlabel {
-    color: rgb(119, 118, 118);
 }
 
 .login-input {

@@ -1,0 +1,132 @@
+.profile {
+    padding: 90px 100px;
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    justify-content: center;
+}
+
+.profileright {
+    display: flex;
+    flex-direction: column;
+    // align-items: stretch;
+}
+
+.profilenav {
+    background-color:white;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px 10px;
+}
+
+.profilenav span {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.profilenav span:hover {
+    color: orangered;
+    background-color: none;
+}
+
+.profilenav span.active {
+    color: orangered;
+    font-size: 17px;
+}
+
+.status {
+    background-color: white;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 0 10px;
+    color: rgb(199, 80, 80);
+    display: flex;
+    justify-content: space-between;
+    min-width: 500px;
+    // max-width: 1280px;
+    // width: 100%;
+}
+
+.status > a {
+    color: white;
+    background-color: rgb(30, 90, 168);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.status > a:hover {
+    background-color: rgb(19, 62, 117); 
+}
+
+.boxheader {
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 15px;
+}
+
+.overview {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px 10px;
+    color: rgb(59, 59, 59);
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    svg {
+        color: rgb(128, 126, 126);
+        font-size: 20px;
+    }
+}
+
+.overview ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    padding: 0 50px;
+}
+
+.overview li {
+    padding: 0 10px;
+}
+
+
+.aboutme {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px 10px;
+    color: rgb(59, 59, 59);
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.aboutme ul {
+    display: flex;
+}
+
+.aboutme li {
+    padding: 10px;
+}
+
+.aboutme h4 {
+    margin-top: 0;
+    margin-left: 15px;
+}
+
+.aboutme h5 {
+    padding-left: 15px;
+    text-indent: 25px;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.aboutme:last-child {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.spot {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px 10px;
+}

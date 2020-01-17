@@ -7,18 +7,64 @@ class SessionForm extends React.Component {
             name: '',
             email: '',
             password: '',
-            city_id: 0,
-            status: 'Accepting Guests'
+            city_name: '',
+            city_id: 1,
+            status: 'Accepting Guests',
+            job: "NA",
+            age: "NA",
+            gender: "NA",
+            language: "NA",
+            about_me: "Describe your hobbies, countries you've visited, dream destinations, etc...",
+            book: "NA",
+            movie: "NA"
         };
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
         this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCity = this.handleCity.bind(this);
+        window.state = this.state;
     }
 
     update(field) {
         return e => this.setState({
             [field]: e.target.value
         });
+    }
+
+    handleCity(e) {
+        switch (e.currentTarget.value) {
+            case "San Francisco":
+                this.setState({
+                    city_id: 1
+                });
+                break;
+            case "Los Angeles":
+                this.setState({
+                    city_id: 2
+                });
+                break;
+            case "New York":
+                this.setState({
+                    city_id: 3
+                });
+                break;
+            case "Austin":
+                this.setState({
+                    city_id: 4
+                });
+                break;
+            case "Chicago":
+                this.setState({
+                    city_id: 5
+                });
+                break;
+            case "Atlanta":
+                this.setState({
+                    city_id: 6
+                });
+                break;
+        }
     }
 
     handleSubmit(e) {
@@ -29,15 +75,16 @@ class SessionForm extends React.Component {
         this.setState({
             name: '',
             email: '',
-            password: ''
+            password: '',
         });
     }
 
     handleDemo(e) {
         const user = {
-            name: 'Demo',
+            name: 'Demo User',
             email: 'demo@email.com',
-            password: 123456
+            password: 123456,
+            city_id: 1
         }
         this.props.processDemoForm(user);
         this.setState({
@@ -56,8 +103,8 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                     <li key={`error-${i}`}>
-                            {error}
+                    <li key={`error-${i}`}>
+                        {error}
                     </li>
                 ))}
             </ul>
@@ -67,16 +114,20 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
+                <h1>Stay with Locals and Meet Travelers</h1>
+                <h3>Share Authentic Travel Experiences</h3>
+                <br />
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    <h2>{(this.props.formType === "signup") ? "Sign Up With Email" : "Log In"}</h2><br/>
+                    <h2>Sign Up With Email</h2><br />
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="signup-form">
-                        <br /> 
-                        <label>Name<br/>
+                        <br />
+                        <label>Name<br />
                             <input type="text"
                                 value={this.state.name}
                                 onChange={this.update('name')}
                                 className="signup-input"
+                                placeholder="First Name, Last Name"
                             />
                         </label>
                         <br />
@@ -85,41 +136,53 @@ class SessionForm extends React.Component {
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="signup-input"
+                                placeholder="Email"
                             />
                         </label>
                         <br />
-                        <label>Password<br />
+                        <label className="signup-password">Password<br />
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="signup-input"
+                                placeholder="Password"
                             />
                         </label>
+                        <label className="signup-select">Location<br />
+                            <select onChange={this.handleCity} >
+                                <option value="San Francisco">San Francisco</option>
+                                <option value="Los Angeles">Los Angeles</option>
+                                <option value="New York">New York</option>
+                                <option value="Austin">Austin</option>
+                                <option value="Chicago">Chicago</option>
+                                <option value="Atlanta">Atlanta</option>
+                            </select>
+                        </label>
                         <br />
-                        <div className="sessionbuttons">
+                        <div className="signupbuttons">
                             <label>
-                                <input 
-                                    className="session-submit" 
-                                    type="submit" 
-                                    value={(this.props.formType === "signup") ? "Join" : "Log In"}  />
+                                <input
+                                    className="signupjoin"
+                                    type="submit"
+                                    value="  Join  " />
                                 <br />
                             </label>
                             <label>
-                                <input 
+                                <input
                                     type="button"
-                                    className="session-submit demo"
+                                    className="signupdemo"
                                     onClick={this.handleDemo}
-                                    value="Demo User" />
+                                    value="Demo" />
                             </label>
                         </div>
                     </div>
                 </form>
                 <div className="loginsection">
-                <br/>
-                <div>Already a member?</div>
-                <div className="loginlink" onClick={this.props.openModal}>Login</div>
+                    <br />
+                    <div>Already a member?</div>
+                    <div className="loginlink" onClick={this.props.openModal}>Login</div>
                 </div>
-           
+
             </div>
         );
     }
