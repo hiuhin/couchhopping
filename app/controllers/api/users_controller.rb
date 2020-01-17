@@ -10,25 +10,27 @@ class Api::UsersController < ApplicationController
         # @user = User.new(email: params[:user][:email], status: params[:user][:status], name: params[:user][:name], password: params[:user][:password], city_id: cityint)
 
         @user = User.new(user_params)
+
+        spot = Spot.create(
+            max_guests: 1,
+            kid_friendly: true,
+            pet_friendly: true,
+            smoking: true, 
+            sleeping_arrangement: "shared room",
+            description: "NA",
+        )
+
+        @user.spot_id = spot.id
+
         if @user.save
             login(@user)
 
-            spot = Spot.create(
-                max_guests: 1,
-                kid_friendly: true,
-                pet_friendly: true,
-                smoking: true, 
-                sleeping_arrangement: "shared room",
-                description: "NA",
-                user_id: @user.id
-            )
-
-            @user.spot_id = spot.id
             @user.save
 
             render "api/users/show"
 
         else
+            spot.destroy
             render json: @user.errors.full_messages, status: 422
         end
 
