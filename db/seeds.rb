@@ -165,8 +165,7 @@ s1 = Spot.create!(
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "I live in a bright, cozy studio apartment and have a twin size airbed for guests.",
-    user_id: 1
+    description: "I live in a bright, cozy studio apartment and have a twin size airbed for guests."
 )
 
 s2 = Spot.create!(
@@ -175,8 +174,7 @@ s2 = Spot.create!(
     pet_friendly: false,
     smoking: false, 
     sleeping_arrangement: "shared room",
-    description: "You will be my roommate if you stay. I can only host one person per evening for now with my very limited space (used to host couples), please mention you check my living situation. The fold out futon will be your bed with sheets and blankets. It is next to my bed. The downside is you don't have much privacy, also please mention that you are clean and won’t bring bedbugs to my futon. !!!Please mention you use deodorant or perfume and not snore!!! ",
-    user_id: 2
+    description: "You will be my roommate if you stay. I can only host one person per evening for now with my very limited space (used to host couples), please mention you check my living situation. The fold out futon will be your bed with sheets and blankets. It is next to my bed. The downside is you don't have much privacy, also please mention that you are clean and won’t bring bedbugs to my futon. !!!Please mention you use deodorant or perfume and not snore!!! "
 )
 
 s3 = Spot.create!(
@@ -185,8 +183,7 @@ s3 = Spot.create!(
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "public room",
-    description: "I have a sofa in the living room that's available. ",
-    user_id: 3
+    description: "I have a sofa in the living room that's available. "
 )
 
 s4 = Spot.create!(
@@ -195,8 +192,7 @@ s4 = Spot.create!(
     pet_friendly: true,
     smoking: true, 
     sleeping_arrangement: "shared bed",
-    description: "I got two mattresses in my room that I can offer you. There won't be too much floor space left if they are both in use, but if that's fine for you, it's fine for me! :)",
-    user_id: 4
+    description: "I got two mattresses in my room that I can offer you. There won't be too much floor space left if they are both in use, but if that's fine for you, it's fine for me! :)"
 )
 
 s5 = Spot.create!(
@@ -205,8 +201,7 @@ s5 = Spot.create!(
     pet_friendly: true,
     smoking: true, 
     sleeping_arrangement: "public room",
-    description: "I live in a small apartment with a couch in the living area/kitchen.",
-    user_id: 5
+    description: "I live in a small apartment with a couch in the living area/kitchen."
 )
 
 s6 = Spot.create!(
@@ -215,8 +210,7 @@ s6 = Spot.create!(
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "Guest room available that fits a family of 3.",
-    user_id: 6
+    description: "Guest room available that fits a family of 3."
 )
 
 s7 = Spot.create!(
@@ -225,8 +219,7 @@ s7 = Spot.create!(
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "Guest room available that fits a family of 3.",
-    user_id: 6
+    description: "Guest room available that fits a family of 3."
 )
 
 s8 = Spot.create!(
@@ -235,8 +228,7 @@ s8 = Spot.create!(
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "Guest room available that fits a family of 3.",
-    user_id: 6
+    description: "Guest room available that fits a family of 3."
 )
 
 s9 = Spot.create!(
@@ -245,8 +237,7 @@ s9 = Spot.create!(
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "Guest room available that fits a family of 3.",
-    user_id: 6
+    description: "Guest room available that fits a family of 3."
 )
 
 s10 = Spot.create!(
@@ -255,8 +246,7 @@ s10 = Spot.create!(
     pet_friendly: false,
     smoking: false, 
     sleeping_arrangement: "shared room",
-    description: "You will be my roommate if you stay. I can only host one person per evening for now with my very limited space (used to host couples), please mention you check my living situation. The fold out futon will be your bed with sheets and blankets. It is next to my bed. The downside is you don't have much privacy, also please mention that you are clean and won’t bring bedbugs to my futon. !!!Please mention you use deodorant or perfume and not snore!!! ",
-    user_id: 10
+    description: "You will be my roommate if you stay. I can only host one person per evening for now with my very limited space (used to host couples), please mention you check my living situation. The fold out futon will be your bed with sheets and blankets. It is next to my bed. The downside is you don't have much privacy, also please mention that you are clean and won’t bring bedbugs to my futon. !!!Please mention you use deodorant or perfume and not snore!!! "
 )
 
 c1 = City.create!(
