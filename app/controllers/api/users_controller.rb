@@ -22,6 +22,9 @@ class Api::UsersController < ApplicationController
 
         @user.spot_id = spot.id
 
+        city = City.find_by(name: params[:user][:city_name])
+        @user.city_id = city.id if city
+
         if @user.save
             login(@user)
 
@@ -54,6 +57,6 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :name, :status, :password, :age, :job, :city_id, :about_me, :gender, :language, :book, :movie)
+        params.require(:user).permit(:email, :name, :status, :password, :age, :job, :about_me, :gender, :language, :book, :movie)
     end
 end

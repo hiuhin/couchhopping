@@ -7,8 +7,7 @@ class SessionForm extends React.Component {
             name: '',
             email: '',
             password: '',
-            city_name: '',
-            city_id: 1,
+            city_name: 'San Francisco',
             status: 'Accepting Guests',
             job: "NA",
             age: "NA",
@@ -23,7 +22,6 @@ class SessionForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this);
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCity = this.handleCity.bind(this);
-        window.state = this.state;
     }
 
     update(field) {
@@ -32,39 +30,45 @@ class SessionForm extends React.Component {
         });
     }
 
+    // handleCity(e) {
+    //     switch (e.currentTarget.value) {
+    //         case "San Francisco":
+    //             this.setState({
+    //                 city_id: 1
+    //             });
+    //             break;
+    //         case "Los Angeles":
+    //             this.setState({
+    //                 city_id: 2
+    //             });
+    //             break;
+    //         case "New York":
+    //             this.setState({
+    //                 city_id: 3
+    //             });
+    //             break;
+    //         case "Austin":
+    //             this.setState({
+    //                 city_id: 4
+    //             });
+    //             break;
+    //         case "Chicago":
+    //             this.setState({
+    //                 city_id: 5
+    //             });
+    //             break;
+    //         case "Atlanta":
+    //             this.setState({
+    //                 city_id: 6
+    //             });
+    //             break;
+    //     }
+    // }
+
     handleCity(e) {
-        switch (e.currentTarget.value) {
-            case "San Francisco":
-                this.setState({
-                    city_id: 1
-                });
-                break;
-            case "Los Angeles":
-                this.setState({
-                    city_id: 2
-                });
-                break;
-            case "New York":
-                this.setState({
-                    city_id: 3
-                });
-                break;
-            case "Austin":
-                this.setState({
-                    city_id: 4
-                });
-                break;
-            case "Chicago":
-                this.setState({
-                    city_id: 5
-                });
-                break;
-            case "Atlanta":
-                this.setState({
-                    city_id: 6
-                });
-                break;
-        }
+        this.setState({
+            city_name: e.currentTarget.value
+        })
     }
 
     handleSubmit(e) {
