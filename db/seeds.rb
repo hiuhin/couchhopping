@@ -289,7 +289,7 @@ d1 = DReq.create!(
     status: "Pending", 
     start: 2020-04-01,
     last: 2020-04-02,
-    message:
+    message: ""
 )
 
 c1.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/sf.jpg"), filename: "sf.jpg")
