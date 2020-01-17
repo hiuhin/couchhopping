@@ -291,3 +291,18 @@ d1 = DReq.create!(
     last: 2020-04-02,
     message:
 )
+
+c1.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/sf.jpg"), filename: "sf.jpg")
+c2.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/la.jpg"), filename: "la.jpg")
+c3.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/nyc.jpg"), filename: "nyc.jpg")
+c4.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/austin.jpg"), filename: "austin.jpg")
+c5.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/chicago.jpg"), filename: "chicago.jpg")
+c6.photo.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/atlanta.jpeg"), filename: "atlanta.jpeg")
+
+
+c1.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/sf-icon.jpeg"), filename: "sf-icon.jpeg")
+c2.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/la-icon.jpg"), filename: "la-icon.jpg")
+c3.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/ny-icon.jpg"), filename: "ny-icon.jpg")
+c4.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/austin-icon.jpg"), filename: "austin-icon.jpg")
+c5.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/chicago-icon.jpg"), filename: "chicago-icon.jpg")
+c6.icon.attach( io: File.open("/Users/mangowong/Desktop/FullStack/images/atlanta-icon.jpg"), filename: "atlanta-icon.jpg")
