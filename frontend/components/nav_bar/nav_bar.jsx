@@ -37,7 +37,7 @@ class NavBar extends React.Component {
                     <button
                         className="navbarlogin"
                         onClick={this.handleLogin}>
-                        Login
+                        Log In
                     </button>
                 </div>
             </div>
