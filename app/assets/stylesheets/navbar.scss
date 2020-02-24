@@ -18,6 +18,13 @@
     margin-left: 20%;
 }
 
+#logo {
+    font-family: 'Give You Glory';
+    color: rgb(240, 114, 41);
+    padding: 8px 60px;
+    margin-left: 20%;
+}
+
 .navbarjoin {
     border-radius: 3px;
     cursor: pointer;
@@ -86,11 +93,16 @@ button:hover {
     color: orangered;
 }
 
+.navbaricon:active {
+    text-decoration: underline;
+}
+
 .navbariconimg {
     width: 40px;
     height: 40px;
     margin: 0 20px 3px 20px;
 }
+
 
 label {
     justify-content: center;

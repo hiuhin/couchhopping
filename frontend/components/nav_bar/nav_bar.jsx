@@ -28,7 +28,8 @@ class NavBar extends React.Component {
             <div className="navbar">
                 <div>
                     <Link to="/">
-                        <img className="logo" src={window.logoURL} />
+                        <h1 id="logo">couchhopping</h1>
+                       {/* <img className="logo" src={window.logoURL} /> */}
                     </Link>
                 </div>
                 <div className="navbarright">
@@ -46,7 +47,8 @@ class NavBar extends React.Component {
             <div className="navbar">
                 <div>
                     <Link to="/" className="header-link">
-                        <img className="logo" src={window.logoURL} />
+                        <h1 id="logo">couchhopping</h1>
+                        {/* <img className="logo" src={window.logoURL} /> */}
                     </Link>
                 </div>
 

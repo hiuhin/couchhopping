@@ -15,7 +15,7 @@ class Api::SpotsController < ApplicationController
     end
 
     def edit
-        @spot = Bench.update!(bench_params)
+        @spot = Spot.update!(spot_params)
         render :show
         if @spot.update
             render :show
