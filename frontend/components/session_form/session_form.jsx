@@ -19,7 +19,6 @@ class SessionForm extends React.Component {
         };
         
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemo = this.handleDemo.bind(this);
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCity = this.handleCity.bind(this);
     }
@@ -80,21 +79,6 @@ class SessionForm extends React.Component {
             name: '',
             email: '',
             password: '',
-        });
-    }
-
-    handleDemo(e) {
-        const user = {
-            name: 'Demo User',
-            email: 'demo@email.com',
-            password: 123456,
-            city_id: 1
-        }
-        this.props.processDemoForm(user);
-        this.setState({
-            name: '',
-            email: '',
-            password: ''
         });
     }
 
@@ -170,13 +154,6 @@ class SessionForm extends React.Component {
                                     type="submit"
                                     value="  Join  " />
                                 <br />
-                            </label>
-                            <label>
-                                <input
-                                    type="button"
-                                    className="signupdemo"
-                                    onClick={this.handleDemo}
-                                    value="Demo" />
                             </label>
                         </div>
                     </div>
