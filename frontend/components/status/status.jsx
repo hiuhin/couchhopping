@@ -19,8 +19,7 @@ class Status extends React.Component {
             <div className="status">
                 <h2>{currentUser.status}</h2>
                 {display}
-                
-;            </div>
+            </div>
         )
     }
 }
