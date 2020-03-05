@@ -9,17 +9,18 @@ class Status extends React.Component {
 
     render() {
         const { currentUser } = this.props;
-        console.log(currentUser);
-        console.log(this.props);
-        let display = currentUser.id === this.props.user.id ? <Link to={`/profile/${currentUser.id}/edit`}>Edit My Profile</Link> : "";
-
-
+        let display;
+        if (currentUser.id === this.props.user.id) {
+            display = <Link to={`/profile/${currentUser.id}/edit`}>Edit My Profile</Link>
+        } else {
+            display = ""
+        }
         return (
             <div className="status">
                 <h2>{currentUser.status}</h2>
-                {/* <Link to={`/profile/${currentUser.id}/edit`}>Edit My Profile</Link> */}
                 {display}
-            </div>
+                
+;            </div>
         )
     }
 }
