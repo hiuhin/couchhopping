@@ -1,10 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import RequestFormContainer from '../request/request_form_container';
 
 class Status extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            showRequestForm: false
+        };
+
+        this.renderRequestForm = this.renderRequestForm.bind(this);
+    }
+
+    toggleRequestForm() {
+        this.state.showRequestForm ? this.setState({showRequestForm: false}) : this.setState({showRequestForm: true});
+    }
+
+    renderRequestForm() {
+       return (this.state.showRequestForm === true) ? <RequestFormContainer /> : "";
     }
 
     render() {
@@ -13,12 +28,15 @@ class Status extends React.Component {
         if (currentUser.id === user.id) {
             display = <Link to={`/profile/${currentUser.id}/edit`}>Edit My Profile</Link>
         } else {
-            display = <Link to={`/profile/${user.id}/request`}>Send Request</Link>
+            display = <button onClick={() => this.toggleRequestForm()}>Send Request</button>
         }
         return (
-            <div className="status">
-                <h2>{currentUser.status}</h2>
-                {display}
+            <div>
+                <div className="status">
+                    <h2>{currentUser.status}</h2>
+                    {display}
+                </div>
+                {this.renderRequestForm()}
             </div>
         )
     }

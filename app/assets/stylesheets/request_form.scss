@@ -1,6 +1,30 @@
 .requestform {
-    padding: 90px 100px;
-    background-color: rgb(221, 221, 221);
-    display: flex;
-    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.requestform form {
+    background-color: white;
+    padding: 20px;
+}
+
+.requestform form input {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 3px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.requestform form textarea {
+    border: 1px solid rgba(0,0,0,0.15);
+    width: 100%;
+    margin-top: 5px;
+}
+
+
+.requestform ::placeholder {
+    font-size: 15px;
+    padding: 10px;
 }

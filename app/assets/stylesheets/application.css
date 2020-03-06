@@ -54,6 +54,23 @@ body {
     background-image: url(https://ht-assets.couchsurfing.com/assets/homepage/house-bg-light-df256a5283759e66231bb9c83a2c55ab8c22008e9a9bb91289f3db6144ab70b1.png);
 }
 
+button {
+    color: white;
+    background-color: rgb(30, 90, 168);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.multicolumn {
+    display: flex;
+}
+
+.multicolumn-column {
+    /* flex: 1 1; */
+    padding-right: 100px;
+}
+
 .signup-form-container h1 {
     font-size: 30px;
     margin: 10px;

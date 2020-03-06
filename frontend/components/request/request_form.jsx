@@ -7,22 +7,25 @@ class Request extends React.Component {
 
     render() {
         return (
-            <div className="requestform">
+            <div className="requestform padded">
                 <form>
-                    <label>
-                        Arrival Date
-                        <input type="date" placeholder="yyyy-mm-dd"/>
-                    </label>
+                    <div className="multicolumn">
+                        <label className="multicolumn-column">
+                            Arrival Date<br />
+                            <input type="date" placeholder="yyyy-mm-dd" />
+                        </label>
+                        <label className="multicolumn-column">
+                            Departure Date<br />
+                            <input type="date" placeholder="yyyy-mm-dd" />
+                        </label>
+                    </div>
                     
+                    <br/>
                     <label>
-                        Departure Date
-                        <input type="date" placeholder="yyyy-mm-dd"/>
-                    </label>
-                    <label>
-                        Message
+                        Message<br />
                         <textarea 
                             name="message" id="" cols="30" rows="10" 
-                            placeholder="Introduce yourself with a nice note describing your, why you'd like to stay, and why you'd be a great guest." />
+                            placeholder="Introduce yourself with a nice note describing your trip, why you'd like to stay, and why you'd be a great guest." />
                     </label>
 
                 </form>

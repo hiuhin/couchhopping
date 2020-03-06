@@ -21,7 +21,7 @@ const App = () => (
                 <ProtectedRoute exact path="/cities/:cityId" component={CityShowContainer} />
                 <ProtectedRoute exact path="/profile/:userId/edit" component={ProfileFormContainer} />
                 <ProtectedRoute exact path="/profile/:userId" component={ProfileContainer} />
-                <ProtectedRoute exact path="/profile/:userId/request" component={RequestFormContainer} />
+                {/* <ProtectedRoute exact path="/profile/:userId/request" component={RequestFormContainer} /> */}
                 <ProtectedRoute path="/" component={DashBoardContainer} />
                 <AuthRoute path="/" component={SignupFormContainer} />
                 <Redirect to="/" />
