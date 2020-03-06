@@ -8,8 +8,25 @@ class Request extends React.Component {
     render() {
         return (
             <div className="requestform">
-            
-                   hiiii
+                <form>
+                    <label>
+                        Arrival Date
+                        <input type="date" placeholder="yyyy-mm-dd"/>
+                    </label>
+                    
+                    <label>
+                        Departure Date
+                        <input type="date" placeholder="yyyy-mm-dd"/>
+                    </label>
+                    <label>
+                        Message
+                        <textarea 
+                            name="message" id="" cols="30" rows="10" 
+                            placeholder="Introduce yourself with a nice note describing your, why you'd like to stay, and why you'd be a great guest." />
+                    </label>
+
+                </form>
+                
             </div>
         )
     }
