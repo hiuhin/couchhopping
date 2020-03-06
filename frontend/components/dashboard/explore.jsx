@@ -9,10 +9,11 @@ class Explore extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchCities()
+        this.props.fetchCities();
     }
 
     render() {
+        console.log(this.props.cities);
         return (
             <div className="explore">
                 <h3>Explore Your Next Destination...</h3>

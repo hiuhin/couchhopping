@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Explore from './explore';
+import Todo from './todo';
 import DashboardSide from './dashboard_side';
 
 class DashBoard extends React.Component {
@@ -14,6 +15,7 @@ class DashBoard extends React.Component {
                 {/* <DashboardSide currentUser={this.props.currentUser}/> */}
                 <div className="dashboardright">
                     <Explore />
+                    <Todo />
                 </div>
             </div>
         )

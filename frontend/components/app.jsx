@@ -8,6 +8,7 @@ import DashBoardContainer from './dashboard/dashboard_container';
 import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from '../components/profile_form/profile_form_container';
 import CityShowContainer from '../components/cities/city_show_container';
+import RequestFormContainer from './request/request_form_container';
 import Modal from './modal/modal';
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
                 <ProtectedRoute exact path="/cities/:cityId" component={CityShowContainer} />
                 <ProtectedRoute exact path="/profile/:userId/edit" component={ProfileFormContainer} />
                 <ProtectedRoute exact path="/profile/:userId" component={ProfileContainer} />
+                <ProtectedRoute exact path="/profile/:userId/request" component={RequestFormContainer} />
                 <ProtectedRoute path="/" component={DashBoardContainer} />
                 <AuthRoute path="/" component={SignupFormContainer} />
                 <Redirect to="/" />

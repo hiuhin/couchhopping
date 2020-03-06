@@ -8,12 +8,12 @@ class Status extends React.Component {
     }
 
     render() {
-        const { currentUser } = this.props;
+        const { currentUser, user } = this.props;
         let display;
-        if (currentUser.id === this.props.user.id) {
+        if (currentUser.id === user.id) {
             display = <Link to={`/profile/${currentUser.id}/edit`}>Edit My Profile</Link>
         } else {
-            display = ""
+            display = <Link to={`/profile/${user.id}/request`}>Send Request</Link>
         }
         return (
             <div className="status">
