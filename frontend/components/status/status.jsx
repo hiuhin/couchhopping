@@ -33,7 +33,7 @@ class Status extends React.Component {
         return (
             <div>
                 <div className="status">
-                    <h2>{currentUser.status}</h2>
+                    <h2 className={(user.status === "Accepting Guests") ? "green" : "red"}>{user.status}</h2>
                     {display}
                 </div>
                 {this.renderRequestForm()}
