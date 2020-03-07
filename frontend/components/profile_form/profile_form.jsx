@@ -31,7 +31,7 @@ class ProfileForm extends React.Component {
 
     render() {
         if (this.props.user === undefined) return null;
-        const {status, job, language, about_me, book, movie} = this.state;
+        const {status, job, language, about_me, book, movie, age} = this.state;
         const {currentUser } = this.props;
         return (
             <div className="profileformbox">
@@ -60,26 +60,27 @@ class ProfileForm extends React.Component {
                 <label>Occupation
                     <input type="text" value={job} onChange={this.update("job")}/>
                 </label>
+                
                 <label>Languages I'm Fluent In
                     <input type="text" value={language} onChange={this.update("language")}/>
+                </label>
+                <label>Age<br/>
+                    <input type="text" value={age} onChange={this.update("age")} />
                 </label>
                 <label>About Me
                     <textarea value={about_me} onChange={this.update("about_me")}/>
                 </label>
-                    <label>Favorite Book
-                <input type="text" value={book} onChange={this.update("book")}/>
+                <label>Favorite Book
+                    <input type="text" value={book} onChange={this.update("book")}/>
                 </label>
                 <label>Favorite Movie Quote
                     <input type="text" value={movie} onChange={this.update("movie")}/>
                 </label>
                 <button onClick={this.handleSubmit}>Save</button>
                 </form>
-               
             </div>
-
         )
     }
-
 }
 
 export default ProfileForm;

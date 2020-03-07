@@ -115,7 +115,7 @@ class SessionForm extends React.Component {
                                 value={this.state.name}
                                 onChange={this.update('name')}
                                 className="signup-input"
-                                placeholder="First Name, Last Name"
+                                placeholder="First and Last Name"
                             />
                         </label>
                         <br />
