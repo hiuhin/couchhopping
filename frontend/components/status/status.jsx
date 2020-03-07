@@ -12,14 +12,16 @@ class Status extends React.Component {
         };
 
         this.renderRequestForm = this.renderRequestForm.bind(this);
+        this.toggleRequestForm = this.toggleRequestForm.bind(this);
     }
+    
 
     toggleRequestForm() {
-        this.state.showRequestForm ? this.setState({showRequestForm: false}) : this.setState({showRequestForm: true});
+        this.setState({showRequestForm:!this.state.showRequestForm});
     }
 
     renderRequestForm() {
-       return (this.state.showRequestForm === true) ? <RequestFormContainer /> : "";
+       return (this.state.showRequestForm === true) ? <RequestFormContainer toggleRequestForm={this.toggleRequestForm}/> : "";
     }
 
     render() {

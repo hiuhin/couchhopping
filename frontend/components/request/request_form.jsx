@@ -1,11 +1,23 @@
 import React from 'react';
+import { createDirectRequest } from '../../util/direct_request_util';
 
 class Request extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            // user_id: this.props.match.params.userId
+            user_id: this.props.currentUser.id
+            
+        }
+    }
+    
+    componentDidMount() {
+        console.log(this.props)
+        console.log(this.state)
     }
 
     render() {
+        const {toggleRequestForm, createDirectRequest} = this.props;
         return (
             <div className="requestform padded">
                 <form>
@@ -19,7 +31,6 @@ class Request extends React.Component {
                             <input type="date" placeholder="yyyy-mm-dd" />
                         </label>
                     </div>
-                    
                     <br/>
                     <label>
                         Message<br />
@@ -27,7 +38,10 @@ class Request extends React.Component {
                             name="message" id="" cols="30" rows="10" 
                             placeholder="Introduce yourself with a nice note describing your trip, why you'd like to stay, and why you'd be a great guest." />
                     </label>
-
+                    <div className="requestFormButtons">
+                        <button className="cancel" onClick={() => toggleRequestForm()}>Cancel</button>
+                        <button onClick={() => createDirectRequest(this.state)}>Send</button>
+                    </div>
                 </form>
                 
             </div>

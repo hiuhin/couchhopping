@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import ProfileForm from './profile_form';
 import { fetchUser, updateUser } from '../../actions/user_actions';

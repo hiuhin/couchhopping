@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import ProfileNav from './profilenav';
 import {fetchSpot, updateSpot} from '../../actions/spot_actions';

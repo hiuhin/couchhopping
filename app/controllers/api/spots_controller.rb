@@ -6,11 +6,11 @@ class Api::SpotsController < ApplicationController
     end
 
     def create
-         @spot = Spot.new(spot_params)
+        @spot = Spot.new(spot_params)
         if @user.save
             render "api/spots/show"
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: @spot.errors.full_messages, status: 422
         end
     end
 
@@ -18,7 +18,7 @@ class Api::SpotsController < ApplicationController
         @spot = Spot.update!(spot_params)
         render :show
         if @spot.update
-            render :show
+            render "apo/spots/show"
         else
             render json: @spot.errors.full_messages, status: 422
         end

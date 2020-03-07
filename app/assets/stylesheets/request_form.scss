@@ -4,7 +4,7 @@
 
 .requestform form {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
 }
 
 .requestform form input {
@@ -15,6 +15,8 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.534);
 }
 
 .requestform form textarea {
@@ -27,4 +29,14 @@
 .requestform ::placeholder {
     font-size: 15px;
     padding: 10px;
+}
+
+.requestFormButtons {
+    text-align: end;
+}
+
+.cancel {
+    background-color: #afb7c3;
+    margin: 10px;
+
 }

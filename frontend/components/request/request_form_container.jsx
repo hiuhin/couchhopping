@@ -1,7 +1,6 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import RequestForm from './request_form';
-import { fetchUser } from '../../actions/user_actions';
+import { fetchDirectRequest, createDirectRequest, deleteDirectRequest } from '../../actions/direct_request_actions';
 
 const mSTP = ({ session, entities: { users } }) => {
     return {
@@ -9,8 +8,10 @@ const mSTP = ({ session, entities: { users } }) => {
     };
 };
 
-// const mDTP = dispatch => ({
-//     fetchUser: (userId) => dispatch(fetchUser(userId))
-// })
+const mDTP = dispatch => ({
+    fetchDirectRequest: (requestId) => dispatch(fetchDirectRequest(requestId)),
+    createDirectRequest: (request) => dispatch(createDirectRequest(request)),
+    deleteDirectRequest: (requestId) => dispatch(deleteDirectRequest(requestId)),
+})
 
-export default connect(mSTP, null)(RequestForm);
+export default connect(mSTP, mDTP)(RequestForm);
