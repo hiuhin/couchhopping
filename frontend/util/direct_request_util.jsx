@@ -12,10 +12,10 @@ export const deleteDirectRequest = requestId => (
     })
 );
 
-export const createDirectRequest = request => (
+export const createDirectRequest = direct_request => (
     $.ajax({
         method: 'POST',
         url: `api/direct_requests/`,
-        data: {request: request}
+        data: {direct_request}
     })
 );

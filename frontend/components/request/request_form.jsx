@@ -5,10 +5,14 @@ class Request extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // user_id: this.props.match.params.userId
-            user_id: this.props.currentUser.id
-            
+            user_id: this.props.currentUser.id,
+            host_id: this.props.host.id,
+            status: "Pending",
+            start: "",
+            end: "",
+            message: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     
     componentDidMount() {
@@ -16,19 +20,30 @@ class Request extends React.Component {
         console.log(this.state)
     }
 
+    update(field) {
+        return e => {
+            this.setState({ [field]: e.currentTarget })
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.createDirectRequest(this.state);
+    }
+
     render() {
-        const {toggleRequestForm, createDirectRequest} = this.props;
+        const {toggleRequestForm} = this.props;
         return (
             <div className="requestform padded">
                 <form>
                     <div className="multicolumn">
                         <label className="multicolumn-column">
                             Arrival Date<br />
-                            <input type="date" placeholder="yyyy-mm-dd" />
+                            <input type="date" placeholder="yyyy-mm-dd" onChange={this.update("start")}/>
                         </label>
                         <label className="multicolumn-column">
                             Departure Date<br />
-                            <input type="date" placeholder="yyyy-mm-dd" />
+                            <input type="date" placeholder="yyyy-mm-dd" onChange={this.update("end")}/>
                         </label>
                     </div>
                     <br/>
@@ -36,11 +51,12 @@ class Request extends React.Component {
                         Message<br />
                         <textarea 
                             name="message" id="" cols="30" rows="10" 
+                            onChange={this.update("message")}
                             placeholder="Introduce yourself with a nice note describing your trip, why you'd like to stay, and why you'd be a great guest." />
                     </label>
                     <div className="requestFormButtons">
                         <button className="cancel" onClick={() => toggleRequestForm()}>Cancel</button>
-                        <button onClick={() => createDirectRequest(this.state)}>Send</button>
+                        <button onClick={this.handleSubmit}>Send</button>
                     </div>
                 </form>
                 
@@ -51,146 +67,3 @@ class Request extends React.Component {
 }
 
 export default Request;
-
-
-// import React from 'react';
-
-// class RequestForm extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-
-//     render() {
-
-//         if (this.props.user === undefined) return null;
-//         return (
-//             <div>
-//                 <form className="requestform">
-//                     hi
-//                     <br/>
-//                     hi
-//                     <br/>
-//                     hi
-//                     <br/>
-//                     hi
-//                     <br/>
-//                     hi
-//                     <br/>
-//                     <label>Hosting Availability
-//                         <select
-//                             value={this.state.status}
-//                             // onChange={this.update("status")}
-//                         >
-//                         <option value="Accepting Guests">
-//                             Accepting Guests
-//                         </option>
-//                         <option value="Not Accepting Guests">
-//                             Not Accepting Guests
-//                         </option>
-//                         </select>
-//                     </label>
-//                     <label>Gender
-//                         <select
-//                             value={this.state.gender}
-//                             // onChange={this.update("gender")}
-//                         >
-//                             <option value="female">Female</option>
-//                             <option value="male">Male</option>
-//                         </select>
-//                     </label>
-//                     <label>Hosting Availability
-//                         <select
-//                             value={this.state.status}
-//                         // onChange={this.update("status")}
-//                         >
-//                             <option value="Accepting Guests">
-//                                 Accepting Guests
-//                         </option>
-//                             <option value="Not Accepting Guests">
-//                                 Not Accepting Guests
-//                         </option>
-//                         </select>
-//                     </label>
-//                     <label>Gender
-//                         <select
-//                             value={this.state.gender}
-//                         // onChange={this.update("gender")}
-//                         >
-//                             <option value="female">Female</option>
-//                             <option value="male">Male</option>
-//                         </select>
-//                     </label>
-//                     <label>Hosting Availability
-//                         <select
-//                             value={this.state.status}
-//                         // onChange={this.update("status")}
-//                         >
-//                             <option value="Accepting Guests">
-//                                 Accepting Guests
-//                         </option>
-//                             <option value="Not Accepting Guests">
-//                                 Not Accepting Guests
-//                         </option>
-//                         </select>
-//                     </label>
-//                     <label>Gender
-//                         <select
-//                             value={this.state.gender}
-//                         // onChange={this.update("gender")}
-//                         >
-//                             <option value="female">Female</option>
-//                             <option value="male">Male</option>
-//                         </select>
-//                     </label>
-//                     <label>Hosting Availability
-//                         <select
-//                             value={this.state.status}
-//                         // onChange={this.update("status")}
-//                         >
-//                             <option value="Accepting Guests">
-//                                 Accepting Guests
-//                         </option>
-//                             <option value="Not Accepting Guests">
-//                                 Not Accepting Guests
-//                         </option>
-//                         </select>
-//                     </label>
-//                     <label>Gender
-//                         <select
-//                             value={this.state.gender}
-//                         // onChange={this.update("gender")}
-//                         >
-//                             <option value="female">Female</option>
-//                             <option value="male">Male</option>
-//                         </select>
-//                     </label>
-//                     <label>Hosting Availability
-//                         <select
-//                             value={this.state.status}
-//                         // onChange={this.update("status")}
-//                         >
-//                             <option value="Accepting Guests">
-//                                 Accepting Guests
-//                         </option>
-//                             <option value="Not Accepting Guests">
-//                                 Not Accepting Guests
-//                         </option>
-//                         </select>
-//                     </label>
-//                     <label>Gender
-//                         <select
-//                             value={this.state.gender}
-//                         // onChange={this.update("gender")}
-//                         >
-//                             <option value="female">Female</option>
-//                             <option value="male">Male</option>
-//                         </select>
-//                     </label>
-//                 </form>
-//             </div>
-
-//         )
-//     }
-// }
-
-// export default RequestForm;

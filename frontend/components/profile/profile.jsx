@@ -14,7 +14,7 @@ class Profile extends React.Component {
     }
 
     render() {
-        
+    
         if (this.props.user === undefined) return null;
         return (
             <div className="profile">

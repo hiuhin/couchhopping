@@ -21,7 +21,7 @@ class Status extends React.Component {
     }
 
     renderRequestForm() {
-       return (this.state.showRequestForm === true) ? <RequestFormContainer toggleRequestForm={this.toggleRequestForm}/> : "";
+       return (this.state.showRequestForm === true) ? <RequestFormContainer host={this.props.user} toggleRequestForm={this.toggleRequestForm}/> : "";
     }
 
     render() {

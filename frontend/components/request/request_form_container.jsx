@@ -4,13 +4,13 @@ import { fetchDirectRequest, createDirectRequest, deleteDirectRequest } from '..
 
 const mSTP = ({ session, entities: { users } }) => {
     return {
-        currentUser: users[session.id]
+        currentUser: users[session.id],
     };
 };
 
 const mDTP = dispatch => ({
     fetchDirectRequest: (requestId) => dispatch(fetchDirectRequest(requestId)),
-    createDirectRequest: (request) => dispatch(createDirectRequest(request)),
+    createDirectRequest: (direct_request) => dispatch(createDirectRequest(direct_request)),
     deleteDirectRequest: (requestId) => dispatch(deleteDirectRequest(requestId)),
 })
 
