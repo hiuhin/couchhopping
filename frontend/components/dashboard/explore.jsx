@@ -13,6 +13,7 @@ class Explore extends React.Component {
     }
 
     render() {
+        // console.log(this.props)
         return (
             <div className="explore">
                 <h3>Explore Your Next Destination...</h3>

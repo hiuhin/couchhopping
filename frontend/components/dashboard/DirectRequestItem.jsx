@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchDirectRequests} from '../../actions/direct_request_actions';
-import DirectRequestItem from './DirectRequestItem';
 
 class Todo extends React.Component {
     constructor(props) {
@@ -11,15 +9,15 @@ class Todo extends React.Component {
     componentDidMount() {
         this.props.fetchDirectRequests();
     }
-    
+
     render() {
-    
+
         return (
             <div>
                 <h2>TO-DO LIST</h2>
                 <p>REQUESTS TO STAY WITH ME</p>
                 <ul>
-                    {this.props.directrequests.map(request => 
+                    {this.props.directrequests.map(request =>
                         <li>
                             <DirectRequestItem request={request} />
                         </li>

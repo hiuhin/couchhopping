@@ -1,3 +1,5 @@
+import { faWindowRestore } from "@fortawesome/free-solid-svg-icons";
+
 export const fetchCities = () => (
     $.ajax({
         method: 'GET',

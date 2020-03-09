@@ -1,3 +1,10 @@
+export const fetchDirectRequests = () => (
+    $.ajax({
+        method: 'GET',
+        url: `api/direct_requests`
+    })
+)
+
 export const fetchDirectRequest = requestId => (
     $.ajax({
         method: 'GET',

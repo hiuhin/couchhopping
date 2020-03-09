@@ -1,4 +1,9 @@
 class Api::DirectRequestsController < ApplicationController
+    def index
+        @direct_requests_by_user = current_user.direct_requests.all
+        @direct_requests_to_user = DirectRequest.where(host_id: current_user.id)
+    end
+    
     def show
         @direct_request = DirectRequest.find(params[:id])
     end

@@ -10,10 +10,8 @@ class DashBoard extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="dashboard">
-                {/* <DashboardSide currentUser={this.props.currentUser}/> */}
                 <div className="dashboardright">
                     <Explore />
                     <Todo />
