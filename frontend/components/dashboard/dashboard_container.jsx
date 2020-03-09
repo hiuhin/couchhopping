@@ -9,8 +9,8 @@ const mSTP = ({ session, entities: { users } }) => {
     };
 };
 
-// const mDTP = dispatch => ({
-//     fetchUser: (userId) => dispatch(fetchUser(userId))
-// })
+const mDTP = dispatch => ({
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+})
 
 export default connect(mSTP, null)(Dashboard);

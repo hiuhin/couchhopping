@@ -16,13 +16,13 @@ class Request extends React.Component {
     }
     
     componentDidMount() {
-        console.log(this.props)
-        console.log(this.state)
+        // console.log(this.props)
+        // console.log(this.state)
     }
 
     update(field) {
         return e => {
-            this.setState({ [field]: e.currentTarget })
+            this.setState({ [field]: e.currentTarget.value })
         }
     }
 
