@@ -13,8 +13,8 @@ class DashBoard extends React.Component {
         return (
             <div className="dashboard">
                 <div className="dashboardright">
-                    <Explore />
                     <Todo />
+                    <Explore />
                     
                 </div>
             </div>

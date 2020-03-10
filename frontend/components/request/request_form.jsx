@@ -21,9 +21,26 @@ class Request extends React.Component {
         }
     }
 
+    updateDate(field) {
+        return e => {
+        // console.log(e.currentTarget.value)}
+            let date = e.currentTarget.value;
+                date = new Date(date);
+            this.setState({ [field]: date })
+        }    
+    }
+
     handleSubmit(e) {
+        console.log(this.props)
         e.preventDefault();
         this.props.createDirectRequest(this.state);
+        this.setState({
+            start: "",
+            end: "",
+            message: ""
+        })
+        this.props.toggleRequestForm();
+        // this.props.history.push('/dashboard');
     }
 
     render() {
@@ -34,11 +51,11 @@ class Request extends React.Component {
                     <div className="multicolumn">
                         <label className="multicolumn-column">
                             Arrival Date<br />
-                            <input type="date" placeholder="yyyy-mm-dd" onChange={this.update("start")}/>
+                            <input type="date" onChange={this.updateDate("start")}/>
                         </label>
                         <label className="multicolumn-column">
                             Departure Date<br />
-                            <input type="date" placeholder="yyyy-mm-dd" onChange={this.update("end")}/>
+                            <input type="date" onChange={this.updateDate("end")}/>
                         </label>
                     </div>
                     <br/>

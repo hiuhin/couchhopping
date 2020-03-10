@@ -127,14 +127,14 @@ c6 = City.create!(
 )
 
 
-# d1 = DReq.create!(
-#     user_id: 1,
-#     host_id: 2,
-#     status: "Pending", 
-#     start: 2020-04-01,
-#     last: 2020-04-02,
-#     message: ""
-# )
+d1 = DirectRequest.create!(
+    user_id: 1,
+    host_id: 10,
+    status: "Pending", 
+    start: new Date(2021, 10, 18)
+    end: new Date(2021, 10, 20)
+    message: "Planning to celebrating my birthday at a new town. Will you offer me your place to stay?"
+)
 
 c1.photo.attach( io: File.open("#{Rails.root}/db/images/sf.jpg"), filename: "sf.jpg")
 c2.photo.attach( io: File.open("#{Rails.root}/db/images/la.jpg"), filename: "la.jpg")

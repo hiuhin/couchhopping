@@ -1,3 +1,33 @@
 // Place all the styles related to the direct_requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box-header {
+    background-color: white;
+    box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+    border-radius: 3px;
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+.box-title {
+    padding: 15px;
+    background-color: #eceff2;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.requestcard {
+    padding: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+    border-radius: 3px;
+}
+
+.cardtitle {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}

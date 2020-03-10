@@ -18,8 +18,8 @@ class Todo extends React.Component {
 
         return (
             <div>
-                <h2>TO-DO LIST</h2>
-                <p>REQUESTS TO STAY WITH ME</p>
+                <h3 className="box-header">📝 TO-DO LIST</h3>
+                <p className="box-title">Requests To Stay With Me</p>
                 <ul>
                     {requestsToUser.map(requestToUser => 
                         <li>

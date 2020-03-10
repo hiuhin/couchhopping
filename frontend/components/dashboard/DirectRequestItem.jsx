@@ -12,19 +12,22 @@ class DirectRequestItem extends React.Component {
     }
 
     render() {
-        const {requester, dates} = this.props;
+        const {requester, dates, nights} = this.props;
         // console.log(this.props)
         if (this.props.requester === undefined) return null;
         return (
-            
-            <div className="directrequestitem">
-                {requester.name}
-                {requester.city}
-                {dates}
-
-
-
-            </div>
+                <div className="requestcard multicolumn">
+                    <div>
+                        <p className="cardtitle">{requester.name}</p>
+                        <p>{requester.city}</p>
+                        <br/>
+                        <span>{nights}</span>
+                        <span>{dates}</span>
+                    </div>
+                    <div>
+                        <button>Respond</button>
+                    </div>
+                </div>
         )
     }
 }
@@ -32,6 +35,7 @@ class DirectRequestItem extends React.Component {
 
 const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end}}) => {
     const oneDay = 24 * 60 * 60 * 1000;
+    startDate = new Date(start)
     let startDate = start.split('-');
     startDate = new Date(startDate[0], startDate[1], startDate[2]);
     let endDate = end.split('-');
@@ -41,6 +45,7 @@ const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end}}) => 
     return {
         requester: users[user_id],
         dates: " 🗓 " + start + " → " + end,
+        nights: " 🏠 " + nights + " nights"
         
     };
 };
