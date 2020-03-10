@@ -13,15 +13,17 @@ class Todo extends React.Component {
     }
     
     render() {
-    
+        const {directrequests, session} = this.props;
+        let requestsToUser = directrequests.filter(directrequest => directrequest.host_id === session.id)
+
         return (
             <div>
                 <h2>TO-DO LIST</h2>
                 <p>REQUESTS TO STAY WITH ME</p>
                 <ul>
-                    {this.props.directrequests.map(request => 
+                    {requestsToUser.map(requestToUser => 
                         <li>
-                            <DirectRequestItem request={request} />
+                            <DirectRequestItem requestToUser={requestToUser} />
                         </li>
                     )}
                 </ul>
@@ -31,9 +33,10 @@ class Todo extends React.Component {
     }
 }
 
-const mSTP = ({ entities: { directRequests } }) => {
+const mSTP = ({ session, entities: { directRequests } }) => {
     return {
-        directrequests: Object.values(directRequests)
+        directrequests: Object.values(directRequests),
+        session: session
     };
 };
 

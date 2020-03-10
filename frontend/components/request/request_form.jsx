@@ -15,11 +15,6 @@ class Request extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
-    componentDidMount() {
-        // console.log(this.props)
-        // console.log(this.state)
-    }
-
     update(field) {
         return e => {
             this.setState({ [field]: e.currentTarget.value })
