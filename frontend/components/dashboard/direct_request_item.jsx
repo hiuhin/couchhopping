@@ -18,7 +18,7 @@ class DirectRequestItem extends React.Component {
     }
 
     renderResponseForm() {
-        return this.state.showResponseForm ? <Response message={this.props.message} requester={this.props.requester}/> : "";
+        return this.state.showResponseForm ? <Response message={this.props.message} requester={this.props.requester} toggleResponseForm={this.toggleResponseForm}/> : "";
     }
 
     toggleResponseForm() {

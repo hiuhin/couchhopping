@@ -62,19 +62,31 @@
     display: flex;
 }
 
-.yesnobuttons span {
+.yesnobuttons > div {
     border: 1px solid #287FB8;
     padding: 10px 25px;
-    color: #287FB8;
     font-size: 15px;
 }
 
 .yes {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
+    color: #287FB8;
+
+}
+
+.maybe {
+    color: #287FB8;
 }
 
 .no {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+    color: #287FB8;
+
+}
+
+.activeResponse {
+    color: white;
+    background-color:#287FB8;
 }
