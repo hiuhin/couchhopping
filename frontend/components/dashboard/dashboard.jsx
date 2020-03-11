@@ -12,6 +12,7 @@ class DashBoard extends React.Component {
     render() {
         return (
             <div className="dashboard">
+                <DashboardSide />
                 <div className="dashboardright">
                     <Todo />
                     <Explore />

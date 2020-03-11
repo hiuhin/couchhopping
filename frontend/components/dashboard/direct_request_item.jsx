@@ -18,7 +18,7 @@ class DirectRequestItem extends React.Component {
         return (
                 <div className="requestcard multicolumn">
                     <div>
-                        <p className="cardtitle">{requester.name}</p>
+                        <p className="name">{requester.name}</p>
                         <p>{requester.city}</p>
                         <br/>
                         <span>{nights}</span>

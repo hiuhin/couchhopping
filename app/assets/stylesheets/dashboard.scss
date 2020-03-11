@@ -6,13 +6,39 @@
 }
 
 .dashboardside {
+    width: 600px;
+}
+
+.block {
     background-color: white;
     box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
-    border-radius: 4px;
-    padding: 15px;
-    margin: 0 10px;
+    padding: 25px;
     text-align: center;
-    width: 500px;
+}
+
+.dashboardprofile {
+    margin: 0 10px;  
+}
+
+.dashboardstatus {
+    margin: 0 10px 10px 10px;
+    font-weight: bolder;
+}
+
+.profiletitle {
+    text-transform: uppercase;
+    margin: 10px 10px 0 10px;
+    text-align: start;
+}
+
+.completeprofile {
+    margin: 0 10px;
+    color: #287FB8;
+}
+
+.ad {
+    margin: 10px 10px;
+    padding: 150px 0px;
 }
 
 .explore {
