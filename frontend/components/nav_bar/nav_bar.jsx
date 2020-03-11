@@ -45,34 +45,35 @@ class NavBar extends React.Component {
 
         const personalGreeting = () => (
             <div className="navbar">
-                <div>
-                    <Link to="/" className="header-link">
-                        <h1 id="logo">couchhopping</h1>
-                        {/* <img className="logo" src={window.logoURL} /> */}
-                    </Link>
-                </div>
+                <div className="navbarcontent">
+                    <div>
+                        <Link to="/" className="header-link">
+                            <img className="logo" src={window.logoURL} />
+                        </Link>
+                    </div>
 
-                <div className="navbarright">
-                    <label className="navbaricon">
-                        <div className="navbarlink">
-                            <Link to="/dashboard">
-                            <img className="navbariconimg" src={window.earthURL} />
-                            <div>Dashboard</div>
-                            </Link>
-                        </div>
-                    </label>               
-                    <label className="navbaricon">
-                        <div className="navbarlink">
-                            <Link to={`/profile/${currentUser.id}`}>
-                            <img className="navbariconimg" src={window.catURL} />
-                            <div>Profile</div>
-                            </Link>
-                        </div>
-                    </label>
-                    <label className="navbaricon">
-                        <img className="navbariconimg" onClick={logout} src={window.settingURL}/>
-                        Log Out
-                    </label>
+                    <div className="navbarright">
+                        <label className="navbaricon">
+                            <div className="navbarlink">
+                                <Link to="/dashboard">
+                                <img className="navbariconimg" src={window.earthURL} />
+                                <div>Dashboard</div>
+                                </Link>
+                            </div>
+                        </label>               
+                        <label className="navbaricon">
+                            <div className="navbarlink">
+                                <Link to={`/profile/${currentUser.id}`}>
+                                <img className="navbariconimg" src={window.catURL} />
+                                <div>Profile</div>
+                                </Link>
+                            </div>
+                        </label>
+                        <label className="navbaricon">
+                            <img className="navbariconimg" onClick={logout} src={window.settingURL}/>
+                            Log Out
+                        </label>
+                    </div>
                 </div>
             </div>
         );
