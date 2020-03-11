@@ -2,11 +2,15 @@
     padding: 90px 100px;
     background-color: #F1EFEA;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .dashboardside {
-    width: 600px;
+    width: 320px;
+}
+
+.dashboardright {
+    width: 850px;
 }
 
 .block {

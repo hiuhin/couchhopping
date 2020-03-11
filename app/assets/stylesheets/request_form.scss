@@ -4,27 +4,27 @@
 
 .requestform form {
     background-color: white;
-    padding: 30px;
+    padding: 50px;
 }
 
 .requestform form input {
     background-color: #fff;
     border: 1px solid rgba(0,0,0,0.15);
     border-radius: 3px;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 100%;
+    // width: 100%;
     font-size: 15px;
     color: rgba(0, 0, 0, 0.534);
 }
 
 .requestform form textarea {
     border: 1px solid rgba(0,0,0,0.15);
-    width: 100%;
     margin-top: 5px;
-    padding: 10px;
+    padding: 15px;
     font-size: 15px;
+    width: 95%;
 }
 
 .requestFormButtons {

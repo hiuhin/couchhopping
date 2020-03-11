@@ -64,7 +64,7 @@ button {
 
 .multicolumn {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .multicolumn-column {

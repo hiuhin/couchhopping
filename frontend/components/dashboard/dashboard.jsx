@@ -16,7 +16,6 @@ class DashBoard extends React.Component {
                 <div className="dashboardright">
                     <Todo />
                     <Explore />
-                    
                 </div>
             </div>
         )

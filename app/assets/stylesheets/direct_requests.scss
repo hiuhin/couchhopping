@@ -20,10 +20,10 @@
 }
 
 .requestcard {
-    padding: 30px;
-
+    padding: 30px 80px;
     background-color: white;
     box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+    margin-bottom: 10px;
 }
 
 .requestcard span {
@@ -42,18 +42,20 @@
 }
 
 .message {
-    padding: 30px 30px;
+    padding: 30px 55px;
     box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+    margin-top: -10px;
 }
 
 .yesnoform {
     background-color: #F7F7F7;
-    padding: 30px 50px;
+    padding: 30px 55px;
     color: #34495e;
     font-weight: bolder;
     font-size: 20px;
     box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .yesnobuttons {

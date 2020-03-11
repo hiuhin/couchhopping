@@ -62,7 +62,7 @@ class Request extends React.Component {
                     <label>
                         Message<br />
                         <textarea 
-                            name="message" id="" cols="30" rows="10" 
+                            name="message" id="" cols="30" rows="5" 
                             onChange={this.update("message")}
                             placeholder="Introduce yourself with a nice note describing your trip, why you'd like to stay, and why you'd be a great guest." />
                     </label>
