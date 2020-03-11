@@ -1,21 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUser }from '../../actions/user_actions';
+import { fetchUser } from '../../actions/user_actions';
+import Response from './response';
 
 class DirectRequestItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            showResponseForm: false
+        }
+        this.renderResponseForm = this.renderResponseForm.bind(this);
+        this.toggleResponseForm = this.toggleResponseForm.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchUser(this.props.requestToUser.user_id);
     }
 
+    renderResponseForm() {
+        return this.state.showResponseForm ? <Response message={this.props.message} requester={this.props.requester}/> : "";
+    }
+
+    toggleResponseForm() {
+        this.setState({ showResponseForm: !this.state.showResponseForm })
+    }
+
     render() {
-        const {requester, dates, nights} = this.props;
+        const {requester, dates, nights, message} = this.props;
         // console.log(this.props)
         if (this.props.requester === undefined) return null;
         return (
+            <div>
                 <div className="requestcard multicolumn">
                     <div>
                         <p className="name">{requester.name}</p>
@@ -25,15 +40,17 @@ class DirectRequestItem extends React.Component {
                         <span>{dates}</span>
                     </div>
                     <div>
-                        <button>Respond</button>
+                        <button onClick={this.toggleResponseForm}>Respond</button>
                     </div>
                 </div>
+                <div className="responseForm">{this.renderResponseForm()}</div>
+            </div>
         )
     }
 }
 
 
-const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end}}) => {
+const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end, message}}) => {
     const oneDay = 24 * 60 * 60 * 1000;
     startDate = new Date(start)
     let startDate = start.split('-');
@@ -45,7 +62,8 @@ const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end}}) => 
     return {
         requester: users[user_id],
         dates: " 🗓 " + start + " → " + end,
-        nights: " 🏠 " + nights + " nights"
+        nights: " 🏠 " + nights + " nights",
+        message: "＂" + message + "＂"
         
     };
 };

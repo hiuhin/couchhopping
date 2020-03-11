@@ -21,10 +21,9 @@
 
 .requestcard {
     padding: 30px;
-    margin-bottom: 10px;
+
     background-color: white;
     box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
-    border-radius: 3px;
 }
 
 .requestcard span {
@@ -35,4 +34,45 @@
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 5px;
+}
+
+.responseForm {
+   background-color: white;
+   margin-top: 0;
+}
+
+.message {
+    padding: 30px 30px;
+    box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+}
+
+.yesnoform {
+    background-color: #F7F7F7;
+    padding: 30px 50px;
+    color: #34495e;
+    font-weight: bolder;
+    font-size: 20px;
+    box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
+    align-items: center;
+}
+
+.yesnobuttons {
+    display: flex;
+}
+
+.yesnobuttons span {
+    border: 1px solid #287FB8;
+    padding: 10px 25px;
+    color: #287FB8;
+    font-size: 15px;
+}
+
+.yes {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.no {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
