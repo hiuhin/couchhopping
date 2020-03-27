@@ -161,7 +161,7 @@ class SessionForm extends React.Component {
                 <div className="loginsection">
                     <br />
                     <div>Already a member?</div>
-                    <div className="loginlink" onClick={this.props.openModal}>Login</div>
+                    <div className="loginlink" onClick={this.handleOpenModal}>Login</div>
                 </div>
 
             </div>
