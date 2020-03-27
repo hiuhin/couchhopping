@@ -27,7 +27,7 @@ class DirectRequestItem extends React.Component {
 
     render() {
         const {requester, dates, nights, message} = this.props;
-        // console.log(this.props)
+        
         if (this.props.requester === undefined) return null;
         return (
             <div>

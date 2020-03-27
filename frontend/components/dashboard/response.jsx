@@ -29,7 +29,6 @@ class Response extends React.Component {
 
     render() {
         const {requester} = this.props;
-        console.log(this.state)
         return (
             <div>
                 <div className="message">
