@@ -26,19 +26,20 @@ class NavBar extends React.Component {
         
         const sessionLinks = () => (
             <div className="navbar">
-                <div>
-                    <Link to="/">
-                        <h1 id="logo">couchhopping</h1>
-                       {/* <img className="logo" src={window.logoURL} /> */}
-                    </Link>
-                </div>
-                <div className="navbarright">
-                    <Link to="/signup" className="navbarjoin">Join</Link>
-                    <button
-                        className="navbarlogin"
-                        onClick={this.handleLogin}>
-                        Log In
-                    </button>
+                <div className="navbarcontent">
+                    <div>
+                        <Link to="/" className="header-link">
+                            <img className="logo" src={window.logoURL} />
+                        </Link>
+                    </div>
+                    <div className="navbarright">
+                        <Link to="/signup" className="navbarjoin">Join</Link>
+                        <button
+                            className="navbarlogin"
+                            onClick={this.handleLogin}>
+                            Log In
+                        </button>
+                    </div>
                 </div>
             </div>
         );
