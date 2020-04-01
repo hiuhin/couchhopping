@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                         <label className="navbaricon">
                             <div className="navbarlink">
                                 <Link to="/dashboard">
-                                <img className="navbariconimg" src={window.earthURL} />
+                                    <i className="fas fa-globe-americas navbariconimg"></i>
                                 <div>Dashboard</div>
                                 </Link>
                             </div>
@@ -65,13 +65,19 @@ class NavBar extends React.Component {
                         <label className="navbaricon">
                             <div className="navbarlink">
                                 <Link to={`/profile/${currentUser.id}`}>
-                                <img className="navbariconimg" src={window.catURL} />
+                                    <i class="fas fa-user-circle navbariconimg"></i>
                                 <div>Profile</div>
                                 </Link>
                             </div>
                         </label>
                         <label className="navbaricon">
-                            <img className="navbariconimg" onClick={logout} src={window.settingURL}/>
+                            <div className="navbarlink">
+                                <i className="far fa-envelope navbariconimg"></i>
+                                <div>Inbox</div>
+                            </div>
+                        </label>
+                        <label className="navbaricon">
+                            <i className="fas fa-cog navbariconimg" onClick={logout}></i>
                             Log Out
                         </label>
                     </div>
