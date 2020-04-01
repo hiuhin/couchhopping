@@ -47,7 +47,7 @@ class NavBar extends React.Component {
                     <div className="navbarright">
                         <label className="navbaricon">
                             <div className="navbarlink">
-                                <NavLink exact={true} activeClassName="active" to="/">
+                                <NavLink exact={true} activeClassName="main_nav_active" to="/">
                                     <i className="fas fa-globe-americas navbariconimg"></i>
                                     <div className="navtitle">Dashboard</div>
                                 </NavLink>
@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                         </label>               
                         <label className="navbaricon">
                             <div className="navbarlink">
-                                <NavLink activeClassName="active" to={`/profile/${currentUser.id}`}>
+                                <NavLink activeClassName="main_nav_active" to={`/profile/${currentUser.id}`}>
                                     <i className="fas fa-user-circle navbariconimg"></i>
                                     <div className="navtitle">Profile</div>
                                 </NavLink>
@@ -63,7 +63,7 @@ class NavBar extends React.Component {
                         </label>
                         <label className="navbaricon">
                             <div className="navbarlink">
-                                <NavLink activeClassName="active" to={"/NoMatch"}>
+                                <NavLink activeClassName="main_nav_active" to={"/NoMatch"}>
                                     <i className="far fa-envelope navbariconimg"></i>
                                     <div className="navtitle">Inbox</div>
                                 </NavLink>

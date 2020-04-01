@@ -23,6 +23,7 @@
     height: 50px;
     width: 50px;
     padding-left: 25px;
+    padding-bottom: 7px;
 }
 
 .navbarjoin {
@@ -97,7 +98,7 @@ button:hover {
     padding-bottom: 7px;
 }
 
-.active {
+.main_nav_active {
     color: orangered;
     border-bottom: orangered 4px solid;
 }
