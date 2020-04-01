@@ -15,8 +15,11 @@ class Explore extends React.Component {
     render() {
         // console.log(this.props)
         return (
-            <div className="explore">
-                <h3>Explore Your Next Destination...</h3>
+            <div>
+                <div className="explore block">
+                    <h3><i class="fas fa-couch">&nbsp;</i>Explore Your Next Destination...</h3>
+                </div>
+                
                 <ul className="cityblock">
                     {this.props.cities.map(city => (
                         <div>

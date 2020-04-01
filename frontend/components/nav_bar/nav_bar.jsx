@@ -1,20 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.handleLogin = this.handleLogin.bind(this);
-        // this.addActiveClass = this.addActiveClass.bind(this);
-        // this.state = {
-        //     active: false,
-        // };
     }
-
-    // toggleClass() {
-    //     const currentState = this.state.active;
-    //     this.setState({ active: !currentState });
-    // };
 
     handleLogin() {
         this.props.clearSessionErrors();
@@ -56,29 +47,31 @@ class NavBar extends React.Component {
                     <div className="navbarright">
                         <label className="navbaricon">
                             <div className="navbarlink">
-                                <Link to="/dashboard">
+                                <NavLink exact={true} activeClassName="active" to="/">
                                     <i className="fas fa-globe-americas navbariconimg"></i>
-                                <div>Dashboard</div>
-                                </Link>
+                                    <div className="navtitle">Dashboard</div>
+                                </NavLink>
                             </div>
                         </label>               
                         <label className="navbaricon">
                             <div className="navbarlink">
-                                <Link to={`/profile/${currentUser.id}`}>
-                                    <i class="fas fa-user-circle navbariconimg"></i>
-                                <div>Profile</div>
-                                </Link>
+                                <NavLink activeClassName="active" to={`/profile/${currentUser.id}`}>
+                                    <i className="fas fa-user-circle navbariconimg"></i>
+                                    <div className="navtitle">Profile</div>
+                                </NavLink>
                             </div>
                         </label>
                         <label className="navbaricon">
                             <div className="navbarlink">
-                                <i className="far fa-envelope navbariconimg"></i>
-                                <div>Inbox</div>
+                                <NavLink activeClassName="active" to={"/NoMatch"}>
+                                    <i className="far fa-envelope navbariconimg"></i>
+                                    <div className="navtitle">Inbox</div>
+                                </NavLink>
                             </div>
                         </label>
                         <label className="navbaricon">
                             <i className="fas fa-cog navbariconimg" onClick={logout}></i>
-                            Log Out
+                            <div className="navtitle">Log Out</div>
                         </label>
                     </div>
                 </div>

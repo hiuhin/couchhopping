@@ -35,7 +35,11 @@ class DashboardSide extends React.Component {
                 </div>
                 <div className="ad block">
                     <h3> Advertise Here </h3>
-                    <h4>➠ Click To Learn More</h4>
+                    <h4>
+                        <a href="mailto:hiuhin@gmail.com?Subject=Advertising%20On%20CouchHopping" target="_top">
+                            ➠ Click Here To Learn More
+                        </a>
+                    </h4>
                 </div>
             </div>
         )

@@ -75,6 +75,7 @@ button:hover {
     display: flex;
     font-size: 10px;
     align-items: center;
+    padding-top: 7px;
 }
 
 .navbarlink {
@@ -86,11 +87,19 @@ button:hover {
     display: flex;
     flex-direction: column;
     text-align: center;
-    
 }
 
 .navbaricon:hover {
     color: orangered;
+}
+
+.navtitle {
+    padding-bottom: 7px;
+}
+
+.active {
+    color: orangered;
+    border-bottom: orangered 4px solid;
 }
 
 .navbariconimg {
@@ -100,4 +109,5 @@ button:hover {
 
 label {
     justify-content: center;
+    
 }
