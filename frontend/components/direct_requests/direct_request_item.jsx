@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
+import {updateDirectResponse } from '../../actions/direct_request_actions';
 import Response from './response';
 
 class DirectRequestItem extends React.Component {
@@ -18,7 +19,13 @@ class DirectRequestItem extends React.Component {
     }
 
     renderResponseForm() {
-        return this.state.showResponseForm ? <Response message={this.props.message} requester={this.props.requester} toggleResponseForm={this.toggleResponseForm}/> : "";
+        return this.state.showResponseForm ? 
+            <Response 
+                message={this.props.message} 
+                requester={this.props.requester}
+                requestToUser={this.props.requestToUser}
+                updateDirectRequest={this.props.updateDirectRequest}
+                toggleResponseForm={this.toggleResponseForm}/> : "";
     }
 
     toggleResponseForm() {
@@ -26,7 +33,7 @@ class DirectRequestItem extends React.Component {
     }
 
     render() {
-        const {requester, dates, nights, message} = this.props;
+        const {requester, dates, nights} = this.props;
         
         if (this.props.requester === undefined) return null;
         return (
@@ -50,7 +57,7 @@ class DirectRequestItem extends React.Component {
 }
 
 
-const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end, message}}) => {
+const mSTP = ({ entities: { users } }, { requestToUser: { user_id, start, end, message } }) => {
     const oneDay = 24 * 60 * 60 * 1000;
     startDate = new Date(start)
     let startDate = start.split('-');
@@ -60,6 +67,7 @@ const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end, messa
     const nights = Math.round(Math.abs((startDate - endDate) / oneDay));
 
     return {
+        // requestToUser: requestToUser,
         requester: users[user_id],
         dates: " 🗓 " + start + " → " + end,
         nights: " 🏠 " + nights + " nights",
@@ -69,7 +77,8 @@ const mSTP = ({ entities: {users} }, {requestToUser: {user_id, start, end, messa
 };
 
 const mDTP = dispatch => ({
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    updateDirectRequest: request => dispatch(updateDirectRequest(request.id))
 })
 
 export default connect(mSTP, mDTP)(DirectRequestItem);

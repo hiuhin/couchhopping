@@ -25,7 +25,6 @@ class Api::DirectRequestsController < ApplicationController
                 render json: @direct_request.errors.full_messages, status: 422
             end
     end
-
     
     private
     
@@ -36,7 +35,8 @@ class Api::DirectRequestsController < ApplicationController
             :status,
             :start,
             :end,
-            :message
+            :message,
+            :response
         )
     end
 

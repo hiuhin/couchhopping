@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import RequestFormContainer from '../request/request_form_container';
+import RequestFormContainer from '../request_form/request_form_container';
 
 class Status extends React.Component {
     constructor(props) {

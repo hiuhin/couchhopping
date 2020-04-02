@@ -37,6 +37,12 @@ export const createDirectRequest = request => dispatch => (
     ))
 );
 
+export const updateDirectRequest = request => dispatch => (
+    APIUtil.updateDirectRequest(request).then(payload => (
+        dispatch(receiveDirectRequest(payload))
+    ))
+);
+
 export const deleteDirectRequest = requestId => dispatch => (
     APIUtil.deleteDirectRequest(requestId).then(() => (
         dispatch(removeDirectRequest(requestId))

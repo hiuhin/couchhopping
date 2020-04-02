@@ -26,3 +26,11 @@ export const createDirectRequest = direct_request => (
         data: {direct_request}
     })
 );
+
+export const updateDirectRequest = direct_request => (
+    $.ajax({
+        method: 'PATCH',
+        url: `api/direct_requests/${direct_request.id}`,
+        data: {direct_request}
+    })
+)

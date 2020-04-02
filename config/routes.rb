@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :spots, only: [:edit, :show, :create]
     resources :cities, only: [:index, :show]
-    resources :direct_requests, only: [:index, :create, :show, :destroy]
+    resources :direct_requests, only: [:index, :create, :show, :destroy, :update]
   end
 
   root "static_pages#root"

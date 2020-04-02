@@ -17,7 +17,7 @@ class Explore extends React.Component {
         return (
             <div>
                 <div className="explore block">
-                    <h3><i class="fas fa-couch">&nbsp;</i>Explore Your Next Destination...</h3>
+                    <h3><i className="fas fa-couch">&nbsp;</i>Explore Your Next Destination...</h3>
                 </div>
                 
                 <ul className="cityblock">

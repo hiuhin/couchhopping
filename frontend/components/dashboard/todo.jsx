@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchDirectRequests} from '../../actions/direct_request_actions';
-import DirectRequestItem from './direct_request_item';
+import DirectRequestItem from '../direct_requests/direct_request_item';
 
 class Todo extends React.Component {
     constructor(props) {

@@ -9,6 +9,7 @@
 User.delete_all
 Spot.delete_all
 City.delete_all
+DirectRequest.delete_all
 
 s1 = Spot.create!(
     max_guests: Faker::Number.within(range: 1..3),
@@ -57,49 +58,57 @@ s5 = Spot.create!(
 
 s6 = Spot.create!(
     max_guests: 3,
-    kid_friendly: true,
-    pet_friendly: true,
+    kid_friendly: false,
+    pet_friendly: false,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "Guest room available that fits a family of 3."
+    description: "Guest room available that fits a family of 3. Absolutely no smoking, no kids, and no pets."
 )
 
 s7 = Spot.create!(
     max_guests: 3,
     kid_friendly: true,
     pet_friendly: true,
-    smoking: false, 
+    smoking: true, 
     sleeping_arrangement: "private room",
     description: "Guest room available that fits a family of 3."
 )
 
 s8 = Spot.create!(
-    max_guests: 3,
+    max_guests: 2,
     kid_friendly: true,
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "Guest room available that fits a family of 3."
+    description: "Please contact me for more information. Thank you!"
 )
 
 s9 = Spot.create!(
-    max_guests: 3,
+    max_guests: 8,
     kid_friendly: true,
     pet_friendly: true,
     smoking: false, 
     sleeping_arrangement: "private room",
-    description: "Guest room available that fits a family of 3."
+    description: "Three bedroom house- the whole house- free for you and your guests! You're very welcome."
 )
 
 s10 = Spot.create!(
     max_guests: 1,
     kid_friendly: false,
     pet_friendly: false,
-    smoking: false, 
+    smoking: true, 
     sleeping_arrangement: "shared room",
     description: "You will be my roommate if you stay. I can only host one person per evening for now with my very limited space (used to host couples), please mention you check my living situation. The fold out futon will be your bed with sheets and blankets. It is next to my bed. The downside is you don't have much privacy, also please mention that you are clean and won’t bring bedbugs to my futon. !!!Please mention you use deodorant or perfume and not snore!!! "
 )
 
+s11 = Spot.create!(
+    max_guests: 3,
+    kid_friendly: true,
+    pet_friendly: true,
+    smoking: false, 
+    sleeping_arrangement: "private room",
+    description: "Extra guest bedroom has one queen bed and one twins bed. Bathroom is shared. Close to shopping mall and restaurants. I look forward to meeting you!"
+)
 
 
 c1 = City.create!(
@@ -124,16 +133,6 @@ c5 = City.create!(
 
 c6 = City.create!(
     name: "Atlanta"
-)
-
-
-d1 = DirectRequest.create!(
-    user_id: 1,
-    host_id: 10,
-    status: "Pending", 
-    start: new Date(2021, 10, 18)
-    end: new Date(2021, 10, 20)
-    message: "Planning to celebrating my birthday at a new town. Will you offer me your place to stay?"
 )
 
 c1.photo.attach( io: File.open("#{Rails.root}/db/images/sf.jpg"), filename: "sf.jpg")
@@ -301,4 +300,51 @@ u10 = User.create!(
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
     spot_id: s10.id
+)
+
+u11 = User.create!(
+    email: 'anne@email.com',
+    name: 'Anne Wong',
+    status: 'Accepting Guests',
+    age: 18,
+    job: "Software Engineer",
+    about_me: "My dream is the ability to make anywhere in the world my office",
+    city_id: c1.id,
+    password: '123456',
+    gender: "Female",
+    language: "English, Chinese", 
+    book: "The Power of Now",
+    movie: "You got a dream. You gotta protect it. People can't do somethin' themselves, they wanna tell you you can't do it. If you want somethin', go get it. Period.",
+    spot_id: s11.id
+)
+
+
+d1 = DirectRequest.create!(
+    user_id: 1,
+    host_id: 10,
+    status: "Pending", 
+    start: "2021-10-18",
+    end: "2021-10-22",
+    message: "Planning to celebrating my birthday at a new town. Will you offer me your place to stay?",
+    response: ""
+)
+
+d2 = DirectRequest.create!(
+    user_id: 2,
+    host_id: 10,
+    status: "Pending", 
+    start: "2020-12-06",
+    end: "2020-12-12",
+    message: "I'd make a great guest because I love to get to know complete strangers. I can even cook for you! Will you respond to me as soon as possible? Thank you.",
+    response: ""
+)
+
+d3 = DirectRequest.create!(
+    user_id: 11,
+    host_id: 10,
+    status: "Pending", 
+    start: "2021-01-10",
+    end: "2021-01-18",
+    message: "Hello there, my name is Anne. I'm planning to visit Austin next year during the holidays and would love to meet locals and hang out. Would you be able to host me?",
+    response: ""
 )

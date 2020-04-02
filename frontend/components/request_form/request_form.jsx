@@ -10,7 +10,8 @@ class Request extends React.Component {
             status: "Pending",
             start: "",
             end: "",
-            message: ""
+            message: "",
+            response: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
