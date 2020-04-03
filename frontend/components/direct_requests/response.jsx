@@ -9,31 +9,6 @@ class Response extends React.Component {
 
     handleResponse(response) {
         this.setState({ response: response }, this.updateRequest);
-
-
-        // console.log(this.state.response); 
-
-        // console.log(this.state.response);
-        // console.log(this.state);
-        // this.setState({ response: response });
-        // console.log(this.state.response);
-
-        // switch (response) {
-        //     case "Yes":
-        // this.props.updateDirectRequest(this.state);
-        //                         // setTimeout(this.state => this.props.updateDirectRequest, 1000);
-        //         break;
-                // this.setState({ yes: !this.state.yes, no: false, maybe: false });
-                // break;
-            // case "maybe":
-                // this.setState({ maybe: !this.state.maybe, no: false, yes: false });
-
-                // break;
-            // case "no":
-            //     this.setState({ no: !this.state.no, yes: false, maybe:false });
-            //     break;
-        // }
-        // console.log(this.response)
     }
 
     updateRequest() {
@@ -42,7 +17,6 @@ class Response extends React.Component {
 
 
     render() {
-        console.log(this.state.response);
         const {requester} = this.props;
         return (
             <div>
