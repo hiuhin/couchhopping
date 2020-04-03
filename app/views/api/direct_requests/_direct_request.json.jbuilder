@@ -1,1 +1,1 @@
-json.extract! direct_request, :id, :user_id, :host_id, :status, :start, :end, :message
+json.extract! direct_request, :id, :user_id, :host_id, :status, :start, :end, :message, :response
