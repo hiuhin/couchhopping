@@ -51,17 +51,17 @@ class Response extends React.Component {
                     </div>
                     <div className="yesnobuttons">
                         <div 
-                            // className={this.state.yes ? "yes activeResponse" : "yes"}
+                            className={this.state.response === "Yes" ? "yes activeResponse" : "yes"}
                             onClick={() => this.handleResponse("Yes")}>
                             Yes
                         </div>
                         <div 
-                            // className={this.state.maybe ? "maybe activeResponse" : "maybe"}
+                            className={this.state.response === "Maybe" ? "maybe activeResponse" : "maybe"}
                             onClick={() => this.handleResponse("Maybe")}>
                             Maybe
                         </div>
                         <div 
-                            // className={this.state.no ? "no activeResponse" : "no"}
+                            className={this.state.response === "No" ? "no activeResponse" : "no"}
                             onClick={() => this.handleResponse("No")}>
                             No
                         </div>
