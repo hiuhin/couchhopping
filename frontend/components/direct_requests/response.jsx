@@ -3,33 +3,43 @@ import React from 'react';
 class Response extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.requestToUser
-        // this.state = {
-        //     yes: false,
-        //     maybe: false,
-        //     no: false
-        // }
-        // this.handleResponse = this.handleResponse.bind(this);
+        this.state = this.props.requestToUser;
+        this.handleResponse = this.handleResponse.bind(this);
     }
 
-    // handleResponse(response) {
-    //     switch (response) {
-    //         case "yes":
-    //             this.setState({ yes: !this.state.yes, no: false, maybe: false });
-    //             break;
-    //         case "maybe":
-    //             this.setState({ maybe: !this.state.maybe, no: false, yes: false });
-    //             // this.props.toggleResponseForm();
-    //             break;
-    //         case "no":
-    //             this.setState({ no: !this.state.no, yes: false, maybe:false });
-    //             break;
-    //     }
-    // }
+    handleResponse(response) {
+        this.setState({ response: response }, this.updateRequest); 
+
+        // console.log(this.state.response);
+        // console.log(this.state);
+        // this.setState({ response: response });
+        // console.log(this.state.response);
+
+        // switch (response) {
+        //     case "Yes":
+        // this.props.updateDirectRequest(this.state);
+        //                         // setTimeout(this.state => this.props.updateDirectRequest, 1000);
+        //         break;
+                // this.setState({ yes: !this.state.yes, no: false, maybe: false });
+                // break;
+            // case "maybe":
+                // this.setState({ maybe: !this.state.maybe, no: false, yes: false });
+
+                // break;
+            // case "no":
+            //     this.setState({ no: !this.state.no, yes: false, maybe:false });
+            //     break;
+        // }
+        // console.log(this.response)
+    }
+
+    updateRequest() {
+        this.props.updateDirectRequest(this.state);
+    }
+
 
     render() {
-        console.log(this.state);
-        const {requester, updateDirectRequest} = this.props;
+        const {requester} = this.props;
         return (
             <div>
                 <div className="message">
@@ -42,18 +52,18 @@ class Response extends React.Component {
                     <div className="yesnobuttons">
                         <div 
                             // className={this.state.yes ? "yes activeResponse" : "yes"}
-                            onClick={() => this.handleResponse("yes")}
-                        >Yes
+                            onClick={() => this.handleResponse("Yes")}>
+                            Yes
                         </div>
                         <div 
                             // className={this.state.maybe ? "maybe activeResponse" : "maybe"}
-                            onClick={() => this.handleResponse("maybe")}
-                        >Maybe
+                            onClick={() => this.handleResponse("Maybe")}>
+                            Maybe
                         </div>
                         <div 
                             // className={this.state.no ? "no activeResponse" : "no"}
-                            onClick={() => this.handleResponse("no")}
-                        >No
+                            onClick={() => this.handleResponse("No")}>
+                            No
                         </div>
                     </div>
                 </div>

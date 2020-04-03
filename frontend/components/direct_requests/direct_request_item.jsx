@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
-import {updateDirectResponse } from '../../actions/direct_request_actions';
+import {updateDirectRequest } from '../../actions/direct_request_actions';
 import Response from './response';
 
 class DirectRequestItem extends React.Component {
@@ -78,7 +78,7 @@ const mSTP = ({ entities: { users } }, { requestToUser: { user_id, start, end, m
 
 const mDTP = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
-    updateDirectRequest: request => dispatch(updateDirectRequest(request.id))
+    updateDirectRequest: request => dispatch(updateDirectRequest(request))
 })
 
 export default connect(mSTP, mDTP)(DirectRequestItem);

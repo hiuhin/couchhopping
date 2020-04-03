@@ -17,6 +17,15 @@ class Api::DirectRequestsController < ApplicationController
             end
     end
 
+    def update
+        @direct_request = DirectRequest.find(params[:id])
+            if @direct_request.update(direct_request_params)
+                render :show
+            else
+                render json: @direct_request.errors.full_messages, status: 422
+            end
+    end
+
     def destroy
         @direct_request = DirectRequest.find(params[:id])
             if @direct_request.destroy
