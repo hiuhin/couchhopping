@@ -8,7 +8,10 @@ class Response extends React.Component {
     }
 
     handleResponse(response) {
-        this.setState({ response: response }, this.updateRequest); 
+        this.setState({ response: response }, this.updateRequest);
+
+
+        // console.log(this.state.response); 
 
         // console.log(this.state.response);
         // console.log(this.state);

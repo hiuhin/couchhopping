@@ -63,7 +63,7 @@ class NavBar extends React.Component {
                         </label>
                         <label className="navbaricon">
                             <div className="navbarlink">
-                                <NavLink activeClassName="main_nav_active" to={"/NoMatch"}>
+                                <NavLink activeClassName="main_nav_active" to={"/inbox"}>
                                     <i className="far fa-envelope navbariconimg"></i>
                                     <div className="navtitle">Inbox</div>
                                 </NavLink>
