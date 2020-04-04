@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class InboxNav extends React.Component {
     constructor(props) {
         super(props);

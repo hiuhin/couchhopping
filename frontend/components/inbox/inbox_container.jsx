@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import Inbox from './inbox'; 
 
-const mSTP = (state) => {
+import {fetchDirectRequests} from '../../actions/direct_request_actions';
+
+const mSTP = ({ session, entities: { directRequests } }) => {
     // console.log(state)
     return {
-        // currentUser: users[session.id],
+        directRequests: Object.values(directRequests)
     };
 };
 
 const mDTP = dispatch => ({
     // fetchUser: (userId) => dispatch(fetchUser(userId)),
-    // fetchDirectRequests: () => dispatch(fetchDirectRequests())
+    fetchDirectRequests: () => dispatch(fetchDirectRequests())
 })
 
-export default connect(mSTP, null)(Inbox);
+export default connect(mSTP, mDTP)(Inbox);
