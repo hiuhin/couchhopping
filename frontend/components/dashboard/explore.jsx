@@ -22,9 +22,9 @@ class Explore extends React.Component {
                 
                 <ul className="cityblock">
                     {this.props.cities.map(city => (
-                        <div>
+                        <div key={city.id}>
                             <Link to={`/cities/${city.id}`} className="picture-link">
-                                <li key={city.objectID}>
+                                <li>
                                     <span className="cityname">{city.name}</span>
                                     <img src={city.iconURL} className="cityicon" />
                                 </li>

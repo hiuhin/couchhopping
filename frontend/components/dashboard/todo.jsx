@@ -22,7 +22,7 @@ class Todo extends React.Component {
                 <p className="box-title">Requests To Stay With Me</p>
                 <ul>
                     {requestsToUser.map(requestToUser => 
-                        <li>
+                        <li key={requestToUser.id}>
                             <DirectRequestItem requestToUser={requestToUser} />
                         </li>
                     )}
