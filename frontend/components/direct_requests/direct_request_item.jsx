@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
 import {updateDirectRequest } from '../../actions/direct_request_actions';
 import Response from './response';
@@ -40,8 +41,8 @@ class DirectRequestItem extends React.Component {
             <div>
                 <div className="requestcard multicolumn transition-away">
                     <div>
-                        <p className="name">{requester.name}</p>
-                        <p>{requester.city}</p>
+                        <Link to={`/profile/${requester.id}`}><p className="name">{requester.name}</p></Link>
+                        <Link to={`/cities/${requester.city_id}`}><p>{requester.city}</p></Link>
                         <br/>
                         <span>{nights}</span>
                         <span>{dates}</span>
