@@ -21,13 +21,32 @@ class Inbox extends React.Component {
         })
     }
 
+    changeActiveClass(page) {
+        return this.state.activePage === page ? "active" : "";
+    }
+
     render() {
         return (
             <div className="inbox">
-                <ul>
-                    <li onClick={() => this.changePage("All Messages")}>All Messages</li>
-                    <li onClick={() => this.changePage("Hosting")}>Hosting</li>
-                    <li onClick={() => this.changePage("Traveling")}>Traveling</li>
+                <ul className="inboxnav">
+                    <li 
+                        onClick={() => this.changePage("All Messages")} 
+                        className={this.changeActiveClass("All Messages")}
+                    >
+                        All Messages
+                    </li>
+                    <li 
+                        onClick={() => this.changePage("Hosting")}
+                        className={this.changeActiveClass("Hosting")}
+                    >
+                        Hosting
+                    </li>
+                    <li 
+                        onClick={() => this.changePage("Traveling")}
+                        className={this.changeActiveClass("Traveling")}
+                    >
+                        Traveling
+                    </li>
                 </ul>
 
                <InboxList 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import {fetchUser} from '../../actions/user_actions';
 
@@ -14,7 +15,6 @@ class InboxListItem extends React.Component {
 
     message() {
         const {userId, directRequest, user} = this.props;
-        console.log(userId, directRequest.user_id, directRequest.response);
         if (userId === directRequest.user_id && (directRequest.response === undefined || directRequest.response === "Maybe")) {
             return user.name + " requested: "
         } else if (userId === directRequest.user_id && directRequest.response !== undefined) {
@@ -33,11 +33,19 @@ class InboxListItem extends React.Component {
         if (user === undefined) return null;
         console.log(directRequest)
         return (
-          <div>
-            {user.name}
-            {user.city}
-            {this.message()}
-            {directRequest.start + " - " + directRequest.end}
+          <div className="multicolumn">
+              <div className=".multicolumn-column">
+                <Link to={`/profile/${user.id}`}>
+                    {user.name}
+                </Link>
+                <Link to={`/city/${user.city_id}`}>
+                    {user.city}
+                </Link>
+              </div>
+              <div className=".multicolumn-column">
+                {this.message()}
+                {directRequest.start + " - " + directRequest.end}
+              </div>
           </div>
         )
     }

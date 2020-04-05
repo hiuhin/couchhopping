@@ -2,7 +2,35 @@
     padding-top: 90px;
     padding-bottom: 20px;
     background-color: #F1EFEA;
-    display: flex;
-    justify-content: center;
     height: 100vh;
+    color: #34495e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inbox * {
+    text-align: center;
+}
+
+.inboxnav {
+    background-color: #F7F7F7;
+    display: flex;
+    // justify-content: center;
+    width: 1000px;
+}
+
+.inboxnav li {
+    font-weight: 700;
+    font-size: 23px;
+    padding: 20px;
+    padding-left: 35px;
+    cursor: pointer;
+    
+}
+
+.inboxnav li:hover, .active {
+    color: #ED6503;
+    border-bottom: 2px solid #ED6503;
+
 }
