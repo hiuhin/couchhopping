@@ -23,7 +23,7 @@ class InboxList extends React.Component {
         }
 
         const filteredList = filterList();
-        console.log(filteredList)
+        // console.log(filteredList)
         return (
             <ul>
                 {filteredList.map((dr, id) => ( 
