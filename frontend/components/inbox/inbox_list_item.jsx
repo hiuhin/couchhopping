@@ -43,7 +43,7 @@ class InboxListItem extends React.Component {
                 </span>
                 <br/>
                 <span className="city">
-                    <Link to={`/city/${user.city_id}`}>
+                    <Link to={`/cities/${user.city_id}`}>
                         {user.city}
                     </Link>
                 </span>
