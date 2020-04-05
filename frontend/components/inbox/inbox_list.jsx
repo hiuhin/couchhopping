@@ -23,12 +23,11 @@ class InboxList extends React.Component {
         }
 
         const filteredList = filterList();
-        // console.log(filteredList)
+
         return (
             <ul>
                 {filteredList.map((dr, id) => ( 
                     <li key={id}>
-                        
                         <InboxListItem 
                             directRequest={dr}
                         />                     

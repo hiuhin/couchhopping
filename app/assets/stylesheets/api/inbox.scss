@@ -29,8 +29,32 @@
     
 }
 
-.inboxnav li:hover, .active {
+.inboxnav li:hover, .activePage {
     color: #ED6503;
     border-bottom: 2px solid #ED6503;
+}
 
+.inbox-item-container {
+    width: 900px;
+    padding: 10px 50px;
+    background-color: #F7F7F7;
+    
+}
+
+.card {
+    border-top: lightgrey 1px solid;
+    padding: 30px 0;
+}
+
+.inbox-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inbox-item-message {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
 }

@@ -22,7 +22,7 @@ class Inbox extends React.Component {
     }
 
     changeActiveClass(page) {
-        return this.state.activePage === page ? "active" : "";
+        return this.state.activePage === page ? "activePage" : "";
     }
 
     render() {

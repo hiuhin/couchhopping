@@ -60,6 +60,7 @@ button {
 .multicolumn {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .multicolumn-column {

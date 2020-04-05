@@ -33,19 +33,31 @@ class InboxListItem extends React.Component {
         if (user === undefined) return null;
         console.log(directRequest)
         return (
-          <div className="multicolumn">
-              <div className=".multicolumn-column">
-                <Link to={`/profile/${user.id}`}>
-                    {user.name}
-                </Link>
-                <Link to={`/city/${user.city_id}`}>
-                    {user.city}
-                </Link>
+          <div className="inbox-item-container ">
+            <div className="card multicolumn">
+              <div className="multicolumn-column">
+                <span className="name">
+                    <Link to={`/profile/${user.id}`}>
+                        {user.name}
+                    </Link>
+                </span>
+                <br/>
+                <span className="city">
+                    <Link to={`/city/${user.city_id}`}>
+                        {user.city}
+                    </Link>
+                </span>
               </div>
-              <div className=".multicolumn-column">
-                {this.message()}
-                {directRequest.start + " - " + directRequest.end}
+              <div className="inbox-item-details .multicolumn-column">
+                <span>
+                    {this.message() + directRequest.start + " - " + directRequest.end}
+                </span>
+                
+                <span className="inbox-item-message">
+                    {directRequest.message.slice(0, 75) + "..."}
+                </span>
               </div>
+            </div>
           </div>
         )
     }
