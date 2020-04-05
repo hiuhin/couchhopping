@@ -14,7 +14,7 @@ class Todo extends React.Component {
     
     render() {
         const {directrequests, session} = this.props;
-        let requestsToUser = directrequests.filter(directrequest => directrequest.host_id === session.id)
+        let requestsToUser = directrequests.filter(directrequest => directrequest.host_id === session.id && directrequest.response === "")
 
         return (
             <div>

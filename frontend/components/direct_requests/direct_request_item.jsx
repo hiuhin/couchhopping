@@ -38,7 +38,7 @@ class DirectRequestItem extends React.Component {
         if (this.props.requester === undefined) return null;
         return (
             <div>
-                <div className="requestcard multicolumn">
+                <div className="requestcard multicolumn transition-away">
                     <div>
                         <p className="name">{requester.name}</p>
                         <p>{requester.city}</p>
@@ -50,7 +50,7 @@ class DirectRequestItem extends React.Component {
                         <button onClick={this.toggleResponseForm}>Respond</button>
                     </div>
                 </div>
-                <div className="responseForm">{this.renderResponseForm()}</div>
+                <div className={this.state.showResponseForm === true ? "formOpen" : ""}>{this.renderResponseForm()}</div>
             </div>
         )
     }

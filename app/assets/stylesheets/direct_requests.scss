@@ -24,7 +24,14 @@
     background-color: white;
     box-shadow: 0 3px 6px 0  rgba(0,0,0,0.25);
     margin-bottom: 10px;
+    z-index: 99;
+    
 }
+
+.transition-away {
+    
+}
+
 
 .requestcard span {
     padding: 0 10px;
@@ -36,10 +43,49 @@
     margin-bottom: 5px;
 }
 
-.responseForm {
-   background-color: white;
-   margin-top: 0;
+@-webkit-keyframes conditionalOpen {
+    from { transform: scaleY(0) }
+    to { transform: scaleY(1) }
 }
+@-moz-keyframes conditionalOpen {
+    from { transform: scaleY(0) }
+    to { transform: scaleY(1) }
+}
+@keyframes conditionalOpen {
+    from { transform: scaleY(0) }
+    to { transform: scaleY(1) }
+}
+
+// @-webkit-keyframes conditionalClose {
+//     from { transform: scaleY(1) }
+//     to { transform: scaleY(0) }
+// }
+// @-moz-keyframes conditionalClose {
+//     from { transform: scaleY(1) }
+//     to { transform: scaleY(0) }
+// }
+// @keyframes conditionalClose {
+//     from { transform: scaleY(1) }
+//     to { transform: scaleY(0) }
+// }
+
+.formOpen {
+    background-color: white;
+    margin-top: 0;
+    animation: conditionalOpen 500ms normal forwards ease-in-out;
+    -webkit-animation: conditionalOpen 500ms normal forwards ease-in-out;
+    -moz-animation: conditionalOpen 500ms normal forwards ease-in-out;
+    transform-origin: top;
+}
+
+// .formClose {
+//     -webkit-animation: conditionalClose 11s normal forwards ease-in-out;
+//     -moz-animation: conditionalClose 11s normal forwards ease-in-out;
+//     animation: conditionalClose 11s normal forwards ease-in-out;
+//     -webkit-transform-origin: 100% 0%;
+//     -moz-transform-origin: 100% 0%;
+//     transform-origin: bottom;
+// }
 
 .message {
     padding: 30px 55px;
@@ -60,6 +106,7 @@
 
 .yesnobuttons {
     display: flex;
+    cursor: pointer;
 }
 
 .yesnobuttons > div {
