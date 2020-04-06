@@ -77,6 +77,10 @@ button {
     text-align: center;
 }
 
+.align-left {
+    text-align: left;
+}
+
 .signup-form-container h1 {
     font-size: 30px;
     margin: 10px;

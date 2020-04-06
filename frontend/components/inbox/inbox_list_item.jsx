@@ -38,7 +38,7 @@ class InboxListItem extends React.Component {
         return (
           <div className="inbox-item-container ">
             <div className="card multicolumn">
-              <div className="multicolumn-column">
+              <div className="multicolumn-column align-left">
                 <span className="name">
                     <Link to={`/profile/${user.id}`}>
                         {user.name}
