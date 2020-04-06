@@ -27,7 +27,15 @@ class CityShow extends React.Component {
                 <header>Available Hosts in {this.props.city.name}</header>
                 <div className="hosts">
                     {selectedHosts.map(host => (
-                        <Link to={`/profile/${host.id}`}><li><FontAwesomeIcon icon={faUserCircle} /><br/>{host.name}</li></Link>
+                        <Link 
+                            key={host.id} 
+                            to={`/profile/${host.id}`}
+                        >
+                            <li>
+                                <FontAwesomeIcon icon={faUserCircle} /><br/>{
+                                host.name}
+                            </li>
+                        </Link>
                     ))}
                 </div>
             </div>
