@@ -15,7 +15,7 @@ class Response extends React.Component {
         this.props.fadeOut();
         setTimeout(() =>
             this.props.updateDirectRequest(this.state), 
-            2000
+            800
         )
     }
 
