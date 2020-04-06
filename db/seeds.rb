@@ -366,7 +366,7 @@ d5 = DirectRequest.create!(
     start: "2021-07-27",
     end: "2021-07-27",
     message: "Every year I try to go visit a new place and this year I plan to visit your city.",
-    response: ""
+    response: "Yes"
 )
 
 d6 = DirectRequest.create!(
@@ -376,12 +376,12 @@ d6 = DirectRequest.create!(
     start: "2020-03-12",
     end: "2020-03-15",
     message: "Hello there! I have a work trip coming up and I'm planning to extend an extra few days afterward to explore the area. Would your place be available?",
-    response: "Yes"
+    response: ""
 )
 
 d7 = DirectRequest.create!(
-    user_id: 4,
-    host_id: 10,
+    user_id: 10,
+    host_id: 4,
     status: "Pending", 
     start: "2069-12-24",
     end: "2069-12-24",
