@@ -9,6 +9,7 @@ import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from '../components/profile_form/profile_form_container';
 import CityShowContainer from '../components/cities/city_show_container';
 import InboxContainer from '../components/inbox/inbox_container';
+
 import Modal from './modal/modal';
 
 const App = () => (

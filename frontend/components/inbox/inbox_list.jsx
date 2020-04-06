@@ -1,11 +1,13 @@
 import React from 'react';
-import directRequestItemContainer from '../direct_requests/direct_request_item';
+import {Link} from 'react-router-dom';
 import InboxListItem from './inbox_list_item';
+
 
 
 class InboxList extends React.Component {
     constructor(props) {
         super(props);
+
     }
 
     render() {
@@ -27,10 +29,13 @@ class InboxList extends React.Component {
         return (
             <ul>
                 {filteredList.map((dr, id) => ( 
-                    <li key={id}>
+                    <li 
+                        key={id}
+                        onClick={this.toggleDetails}
+                    >
                         <InboxListItem 
                             directRequest={dr}
-                        />                     
+                        />            
                     </li>
                 ))}
             </ul>

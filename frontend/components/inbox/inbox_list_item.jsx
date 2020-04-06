@@ -1,23 +1,41 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+
 
 import {fetchUser} from '../../actions/user_actions';
+import Details from './details';
+import {updateDirectRequest} from '../../actions/direct_request_actions';
 
 class InboxListItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            showDetails: false
+        }
+        this.toggleDetails = this.toggleDetails.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchUser(this.props.userId)
     }
 
+    toggleDetails() {
+        this.setState({ showDetails: !this.state.showDetails })
+    }
+
+    renderDetails() {
+        return this.state.showDetails === true ? 
+            <Details 
+                directRequest={this.props.directRequest} 
+                currentUser={this.props.currentUser}
+                updateDirectRequest={this.props.updateDirectRequest}
+            /> : ""
+    }
+
     generateMessage() {
         const {userId, directRequest, user} = this.props;
        
         if (userId === directRequest.user_id && (directRequest.response === "" || directRequest.response === "Maybe")) {
-            console.log(user.name)
             return user.name + " requested: "
         } else if (userId === directRequest.user_id && directRequest.response !== undefined) {
             if (directRequest.response === "Yes") {
@@ -34,32 +52,34 @@ class InboxListItem extends React.Component {
         const {user, directRequest} = this.props;
         if (user === undefined) return null;
         const message = this.generateMessage();
-        // console.log(message);
         return (
           <div className="inbox-item-container ">
-            <div className="card multicolumn">
-              <div className="multicolumn-column align-left">
-                <span className="name">
-                    <Link to={`/profile/${user.id}`}>
-                        {user.name}
-                    </Link>
+            <div className="card multicolumn" onClick={this.toggleDetails}>
+                <div className="multicolumn-column align-left inbox-item-left">
+                <span className="name">                   
+                        {user.name}               
                 </span>
                 <br/>
                 <span className="city">
-                    <Link to={`/cities/${user.city_id}`}>
+               
                         {user.city}
-                    </Link>
                 </span>
               </div>
-              <div className="inbox-item-details .multicolumn-column">
+              <div className="inbox-item-right multicolumn-column">
                 <span>
                     {message + directRequest.start + " - " + directRequest.end}
                 </span>
                 
                 <span className="inbox-item-message">
-                    {directRequest.message.slice(0, 75) + "..."}
+                    {this.state.showDetails ? 
+                        directRequest.message : 
+                        directRequest.message.slice(0, 75) + "..."
+                    }
                 </span>
               </div>
+            </div>
+            <div>
+                {this.renderDetails()}
             </div>
           </div>
         )
@@ -73,12 +93,14 @@ const mSTP = ({ session, entities: { users } }, {directRequest}) => {
     return {
         userId,
         user: users[userId],
-        directRequest
+        directRequest,
+        currentUser: users[session.id]
     };
 };
 
 const mDTP = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
+    updateDirectRequest: id => dispatch(updateDirectRequest(id)),
 })
 
 export default connect(mSTP, mDTP)(InboxListItem);

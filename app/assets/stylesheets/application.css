@@ -65,7 +65,7 @@ button {
 
 .multicolumn-column {
     /* flex: 1 1; */
-    padding-right: 100px;
+    padding-right: 50px;
 }
 
 .mod {
@@ -79,6 +79,10 @@ button {
 
 .align-left {
     text-align: left;
+}
+
+.align-right {
+    text-align: right;
 }
 
 .signup-form-container h1 {
