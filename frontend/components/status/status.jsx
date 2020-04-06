@@ -30,7 +30,9 @@ class Status extends React.Component {
         if (currentUser.id === user.id) {
             display = <Link to={`/profile/${currentUser.id}/edit`}>Edit My Profile</Link>
         } else {
-            display = <button onClick={() => this.toggleRequestForm()}>Send Request</button>
+            user.status === "Accepting Guests" ? 
+                display = <button onClick={() => this.toggleRequestForm()}>Send Request</button> :
+                display = ""
         }
         return (
             <div>
