@@ -348,3 +348,33 @@ d3 = DirectRequest.create!(
     message: "Hello there, my name is Anne. I'm planning to visit Austin next year during the holidays and would love to meet locals and hang out. Would you be able to host me?",
     response: ""
 )
+
+d4 = DirectRequest.create!(
+    user_id: 10,
+    host_id: 11,
+    status: "Pending", 
+    start: "2023-06-10",
+    end: "2023-06-18",
+    message: "I'm planning a low-budget trip and I'll need your hospitality to make it happen. Thank you in advance for your kindness, I will return the favor in the future!",
+    response: ""
+)
+
+d5 = DirectRequest.create!(
+    user_id: 10,
+    host_id: 3,
+    status: "Pending", 
+    start: "2021-07-27",
+    end: "2021-07-27",
+    message: "Every year I try to go visit a new place and this year I plan to visit your city.",
+    response: ""
+)
+
+d6 = DirectRequest.create!(
+    user_id: 7,
+    host_id: 10,
+    status: "Pending", 
+    start: "2020-03-12",
+    end: "2020-03-15",
+    message: "Hello there! I have a work trip coming up and I'm planning to extend an extra few days afterward to explore the area. Would your place be available?",
+    response: ""
+)

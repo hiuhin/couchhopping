@@ -13,9 +13,11 @@ class InboxListItem extends React.Component {
         this.props.fetchUser(this.props.userId)
     }
 
-    message() {
+    generateMessage() {
         const {userId, directRequest, user} = this.props;
-        if (userId === directRequest.user_id && (directRequest.response === undefined || directRequest.response === "Maybe")) {
+       
+        if (userId === directRequest.user_id && (directRequest.response === "" || directRequest.response === "Maybe")) {
+            console.log(user.name)
             return user.name + " requested: "
         } else if (userId === directRequest.user_id && directRequest.response !== undefined) {
             if (directRequest.response === "Yes") {
@@ -31,7 +33,8 @@ class InboxListItem extends React.Component {
     render() {
         const {user, directRequest} = this.props;
         if (user === undefined) return null;
-        console.log(directRequest)
+        const message = this.generateMessage();
+        // console.log(message);
         return (
           <div className="inbox-item-container ">
             <div className="card multicolumn">
@@ -50,7 +53,7 @@ class InboxListItem extends React.Component {
               </div>
               <div className="inbox-item-details .multicolumn-column">
                 <span>
-                    {this.message() + directRequest.start + " - " + directRequest.end}
+                    {message + directRequest.start + " - " + directRequest.end}
                 </span>
                 
                 <span className="inbox-item-message">
