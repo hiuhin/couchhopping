@@ -43,8 +43,6 @@ export class Details extends Component {
     }
 
     render() {
-        const { directRequest } = this.props;
-
         return (
             <div className="details-response align-right">
                 {this.renderResponse()}

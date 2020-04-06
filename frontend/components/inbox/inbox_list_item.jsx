@@ -68,13 +68,16 @@ class InboxListItem extends React.Component {
               </div>
               <div className="inbox-item-right multicolumn-column">
                 <span>
-                    {message + directRequest.start + " - " + directRequest.end}
+                    <span style={{fontWeight:"bold"}}>{message}</span>
+                    &nbsp; {" 🗓 " + directRequest.start + " → " + directRequest.end}
+                    &nbsp; {" 🏠 " + this.props.nights + " nights"}
                 </span>
                 
                 <span className="inbox-item-message">
                     {this.state.showDetails ? 
                         directRequest.message : 
-                        directRequest.message.slice(0, 75) + "..."
+                        directRequest.message.slice(0, 75) + 
+                        (directRequest.message.length > 75 ? "..." : "")
                     }
                 </span>
               </div>
@@ -91,11 +94,19 @@ class InboxListItem extends React.Component {
 
 const mSTP = ({ session, entities: { users } }, {directRequest}) => {
     const userId = directRequest.user_id === session.id ? directRequest.host_id : directRequest.user_id;
+    const oneDay = 24 * 60 * 60 * 1000;
+    // let startDate = new Date(directRequest.start)
+    let startDate = directRequest.start.split('-');
+    startDate = new Date(startDate[0], startDate[1], startDate[2]);
+    let endDate = directRequest.end.split('-');
+    endDate = new Date(endDate[0], endDate[1], endDate[2]);
+    const nights = Math.round(Math.abs((startDate - endDate) / oneDay));
     return {
         userId,
         user: users[userId],
         directRequest,
-        currentUser: users[session.id]
+        currentUser: users[session.id],
+        nights,
     };
 };
 
