@@ -24,7 +24,6 @@ class Request extends React.Component {
 
     updateDate(field) {
         return e => {
-        // console.log(e.currentTarget.value)}
             let date = e.currentTarget.value;
                 date = new Date(date);
             this.setState({ [field]: date })
@@ -32,7 +31,6 @@ class Request extends React.Component {
     }
 
     handleSubmit(e) {
-        // console.log(this.props)
         e.preventDefault();
         this.props.createDirectRequest(this.state);
         this.setState({
@@ -41,7 +39,6 @@ class Request extends React.Component {
             message: ""
         })
         this.props.toggleRequestForm();
-        // this.props.history.push('/dashboard');
     }
 
     render() {

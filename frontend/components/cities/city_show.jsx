@@ -1,6 +1,4 @@
 import React from 'react';
-import { faPhotoVideo } from '@fortawesome/free-solid-svg-icons';
-import Hosts from '../hosts/hosts';
 import {Link} from 'react-router-dom';
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
