@@ -45,7 +45,11 @@ class InboxListItem extends React.Component {
                 return "You declined: "
             }
         } else {
-            return "You requested: "
+            if (directRequest.response === "Yes") {
+                return user.name + " has accepted: "
+            } else {
+                return "You requested: "
+            }
         }
     }
 
