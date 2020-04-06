@@ -364,7 +364,7 @@ d5 = DirectRequest.create!(
     host_id: 3,
     status: "Pending", 
     start: "2021-07-27",
-    end: "2021-07-27",
+    end: "2021-07-28",
     message: "Every year I try to go visit a new place and this year I plan to visit your city.",
     response: "Yes"
 )
