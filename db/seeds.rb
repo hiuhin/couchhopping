@@ -376,5 +376,15 @@ d6 = DirectRequest.create!(
     start: "2020-03-12",
     end: "2020-03-15",
     message: "Hello there! I have a work trip coming up and I'm planning to extend an extra few days afterward to explore the area. Would your place be available?",
+    response: "Yes"
+)
+
+d7 = DirectRequest.create!(
+    user_id: 4,
+    host_id: 10,
+    status: "Pending", 
+    start: "2069-12-24",
+    end: "2069-12-24",
+    message: "I know this trip is 50 years from now, but it's a very special day for me and I hope you can accept my request.",
     response: ""
 )
