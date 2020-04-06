@@ -384,7 +384,7 @@ d7 = DirectRequest.create!(
     host_id: 4,
     status: "Pending", 
     start: "2069-12-24",
-    end: "2069-12-24",
+    end: "2069-12-25",
     message: "I know this trip is 50 years from now, but it's a very special day for me and I hope you can accept my request.",
     response: ""
 )
