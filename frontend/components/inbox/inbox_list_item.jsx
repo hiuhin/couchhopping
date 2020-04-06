@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {fetchUser} from '../../actions/user_actions';
 import Details from './details';
-import {updateDirectRequest} from '../../actions/direct_request_actions';
+import {updateDirectRequest, deleteDirectRequest} from '../../actions/direct_request_actions';
 
 class InboxListItem extends React.Component {
     constructor(props) {
@@ -29,6 +29,7 @@ class InboxListItem extends React.Component {
                 directRequest={this.props.directRequest} 
                 currentUser={this.props.currentUser}
                 updateDirectRequest={this.props.updateDirectRequest}
+                deleteDirectRequest={this.props.deleteDirectRequest}
             /> : ""
     }
 
@@ -101,6 +102,7 @@ const mSTP = ({ session, entities: { users } }, {directRequest}) => {
 const mDTP = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
     updateDirectRequest: id => dispatch(updateDirectRequest(id)),
+    deleteDirectRequest: id => dispatch(deleteDirectRequest(id))
 })
 
 export default connect(mSTP, mDTP)(InboxListItem);

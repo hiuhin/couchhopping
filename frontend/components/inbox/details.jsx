@@ -6,17 +6,21 @@ export class Details extends Component {
         this.state = this.props.directRequest;
         this.renderResponse = this.renderResponse.bind(this);
         this.handleResponse = this.handleResponse.bind(this);
+        this.handleDeleteRequest = this.handleDeleteRequest.bind(this);
     }
 
     handleResponse(response) {
         this.setState({response: response }, () => this.props.updateDirectRequest(this.state))
     }
 
+    handleDeleteRequest() {
+        this.props.deleteDirectRequest(this.props.directRequest.id)
+    }
+
 
     renderResponse() {
-        const { directRequest, updateDirectRequest } = this.props;
-        // console.log(directRequest.id)
-        // console.log(directRequest.host_id)
+        const { directRequest } = this.props;
+  
         if (this.props.currentUser.id === directRequest.host_id) {
             switch (directRequest.response) {
                 case "Yes":
@@ -31,9 +35,9 @@ export class Details extends Component {
         } else {
             switch (directRequest.response){
                 case "Yes":
-                    return "Your Request Has Been Accepted!"
+                    return <><p>Your Request Has Been Accepted!</p><button onClick={this.handleDeleteRequest}>Delete Request</button></>
                 default:
-                    return "Your Request Is Still Pending..."
+                    return <><p>Your Request Is Still Pending...</p><button onClick={this.handleDeleteRequest}>Delete Request</button></> 
             }
         }
     }
