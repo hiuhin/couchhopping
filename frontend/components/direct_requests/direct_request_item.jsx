@@ -9,10 +9,12 @@ class DirectRequestItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showResponseForm: false
+            showResponseForm: false,
+            className: ""
         }
         this.renderResponseForm = this.renderResponseForm.bind(this);
         this.toggleResponseForm = this.toggleResponseForm.bind(this);
+        this.fadeOut = this.fadeOut.bind(this);
     }
 
     componentDidMount() {
@@ -26,7 +28,12 @@ class DirectRequestItem extends React.Component {
                 requester={this.props.requester}
                 requestToUser={this.props.requestToUser}
                 updateDirectRequest={this.props.updateDirectRequest}
+                fadeOut={this.fadeOut}
                 toggleResponseForm={this.toggleResponseForm}/> : "";
+    }
+
+    fadeOut() {
+        this.setState({className: "fadeOut"})
     }
 
     toggleResponseForm() {
@@ -38,8 +45,8 @@ class DirectRequestItem extends React.Component {
         
         if (this.props.requester === undefined) return null;
         return (
-            <div>
-                <div className="requestcard multicolumn transition-away">
+            <div className={this.state.className}>
+                <div className="requestcard multicolumn">
                     <div>
                         <Link to={`/profile/${requester.id}`}><p className="name">{requester.name}</p></Link>
                         <Link to={`/cities/${requester.city_id}`}><p>{requester.city}</p></Link>

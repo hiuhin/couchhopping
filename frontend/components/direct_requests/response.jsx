@@ -12,8 +12,11 @@ class Response extends React.Component {
     }
 
     updateRequest() {
-        
-        this.props.updateDirectRequest(this.state);
+        this.props.fadeOut();
+        setTimeout(() =>
+            this.props.updateDirectRequest(this.state), 
+            2000
+        )
     }
 
 
