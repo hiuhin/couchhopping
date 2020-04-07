@@ -29,7 +29,6 @@ export class SearchBar extends Component {
     render() {
         let filteredResults = this.props.cities.filter(city => city.name.toLowerCase().includes(this.state.query));
         let firstResult = filteredResults[0];
-        console.log(firstResult);
         return (
           <div className="searchbar">
             <div className="searchbar-left">
