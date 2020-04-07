@@ -27,13 +27,18 @@ export class SearchBar extends Component {
     }
 
     render() {
-        let filteredResults = this.props.cities.filter(city => city.name.toLowerCase().includes(this.state.query))
+        let filteredResults = this.props.cities.filter(city => city.name.toLowerCase().includes(this.state.query));
+        let firstResult = filteredResults[0];
+        console.log(firstResult);
         return (
           <div className="searchbar">
             <div className="searchbar-left">
               {this.state.searchOption} &nbsp; {"▾"}
             </div>
-            <div className="searchbar-right">
+            <form 
+                className="searchbar-right"
+                onSubmit={() => this.handleSelectSearchResultItem(firstResult.id)}
+            >
               <i className="fas fa-search search-icon"></i>
               <input
                 type="text"
@@ -48,7 +53,7 @@ export class SearchBar extends Component {
                         <li key={city.id} onClick={() => this.handleSelectSearchResultItem(city.id)}>{city.name}</li>
                 ))}
               </ul>
-            </div>
+            </form>
           </div>
         );
     }
