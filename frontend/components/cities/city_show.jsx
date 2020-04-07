@@ -18,26 +18,34 @@ class CityShow extends React.Component {
         const { currentUser, hosts, city} = this.props;
         const selectedHosts = hosts.filter(host => host.city_id === city.id && host.id !== currentUser.id)
         return (
-            <div className="cityshow">
-                <img src={this.props.city.photoURL} className="citybanner"/> 
-                <span className="citytitle">{this.props.city.name}</span>
-                <br/>
-                <header>Available Hosts in {this.props.city.name}</header>
-                <div className="hosts">
-                    {selectedHosts.map(host => (
-                        <Link 
-                            key={host.id} 
-                            to={`/profile/${host.id}`}
-                        >
-                            <li>
-                                <FontAwesomeIcon icon={faUserCircle} /><br/>{
-                                host.name}
-                            </li>
+          <div className="cityshow">
+            <img src={this.props.city.photoURL} className="citybanner" />
+            <span className="citytitle">{this.props.city.name}</span>
+            <div className="lists-container">
+              <div className="hosts-list-container">
+                <header>
+                  <i className="fas fa-house-user" /> Local Hosts
+                </header>
+                <div className="hosts-list">
+                  <p>
+                    Stay with one of the {selectedHosts.length} hosts in {this.props.city.name}
+                  </p>
+                  <div className="hosts">
+                    {selectedHosts.map((host) => (
+                        <Link key={host.id} to={`/profile/${host.id}`}>
+                        <li>
+                            <FontAwesomeIcon icon={faUserCircle} />
+                            <br />
+                            {host.name}
+                        </li>
                         </Link>
                     ))}
+                  </div>
                 </div>
+              </div>
             </div>
-        )
+          </div>
+        );
     }
 
 }
