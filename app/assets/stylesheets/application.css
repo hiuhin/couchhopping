@@ -57,6 +57,12 @@ button {
     border-radius: 4px;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
 .multicolumn {
     display: flex;
     justify-content: space-between;
