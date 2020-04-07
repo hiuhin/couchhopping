@@ -166,6 +166,7 @@ u1 = User.create!(
     movie: Faker::Movie.quote,
     spot_id: s1.id
 )
+
 u2 = User.create!(
     email: Faker::Internet.email,
     name: Faker::Name.name,
@@ -320,8 +321,8 @@ u11 = User.create!(
 
 
 d1 = DirectRequest.create!(
-    user_id: 1,
-    host_id: 10,
+    user_id: u1.id,
+    host_id: u10.id,
     status: "Pending", 
     start: "2021-10-18",
     end: "2021-10-22",
@@ -330,28 +331,28 @@ d1 = DirectRequest.create!(
 )
 
 d2 = DirectRequest.create!(
-    user_id: 2,
-    host_id: 10,
+    user_id: u2.id,
+    host_id: u10.id,
     status: "Pending", 
-    start: "2020-12-06",
+    start: "2020-12-09",
     end: "2020-12-12",
     message: "I'd make a great guest because I love to get to know complete strangers. I can even cook for you! Will you respond to me as soon as possible? Thank you.",
     response: ""
 )
 
 d3 = DirectRequest.create!(
-    user_id: 11,
-    host_id: 10,
+    user_id: u11.id,
+    host_id: u10.id,
     status: "Pending", 
     start: "2021-01-10",
-    end: "2021-01-18",
+    end: "2021-01-16",
     message: "Hello there, my name is Anne. I'm planning to visit Austin next year during the holidays and would love to meet locals and hang out. Would you be able to host me?",
     response: ""
 )
 
 d4 = DirectRequest.create!(
-    user_id: 10,
-    host_id: 11,
+    user_id: u10.id,
+    host_id: u11.id,
     status: "Pending", 
     start: "2023-06-10",
     end: "2023-06-18",
@@ -360,8 +361,8 @@ d4 = DirectRequest.create!(
 )
 
 d5 = DirectRequest.create!(
-    user_id: 10,
-    host_id: 3,
+    user_id: u10.id,
+    host_id: u3.id,
     status: "Pending", 
     start: "2021-07-27",
     end: "2021-07-28",
@@ -370,8 +371,8 @@ d5 = DirectRequest.create!(
 )
 
 d6 = DirectRequest.create!(
-    user_id: 7,
-    host_id: 10,
+    user_id: u7.id,
+    host_id: u10.id,
     status: "Pending", 
     start: "2020-03-12",
     end: "2020-03-15",
@@ -380,11 +381,21 @@ d6 = DirectRequest.create!(
 )
 
 d7 = DirectRequest.create!(
-    user_id: 10,
-    host_id: 4,
+    user_id: u10.id,
+    host_id: u4.id,
     status: "Pending", 
     start: "2069-12-24",
     end: "2069-12-25",
     message: "I know this trip is 50 years from now, but it's a very special day for me and I hope you can accept my request.",
+    response: ""
+)
+
+d8 = DirectRequest.create!(
+    user_id: u8.id,
+    host_id: u6.id,
+    status: "Pending", 
+    start: "2024-02-24",
+    end: "2069-02-28",
+    message: "I'm from Arlington and driving up to the city. Please let me know if I can crash at your place. Thank you.",
     response: ""
 )

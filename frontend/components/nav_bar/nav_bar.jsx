@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import SearchBar from './search_bar';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -38,10 +39,13 @@ class NavBar extends React.Component {
         const personalGreeting = () => (
             <div className="navbar">
                 <div className="navbarcontent">
-                    <div>
-                        <Link to="/" className="header-link">
+                    <div className="nav-bar-left multicolumn">
+                        <Link to="/" className="header-link multicolumn-column">
                             <img className="logo" src={window.logoURL} />
                         </Link>
+                        <div className="multicolumn-column">
+                            <SearchBar />
+                        </div>
                     </div>
 
                     <div className="navbarright">

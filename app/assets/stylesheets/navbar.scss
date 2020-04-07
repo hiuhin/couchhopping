@@ -112,3 +112,48 @@ label {
     justify-content: center;
     
 }
+
+.searchbar {
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5);
+    color: #333333;
+}
+
+.searchbar-left {
+    border-right: 1px solid grey;
+    padding: 10px 15px;
+}
+
+.searchbar-right {
+    padding: 10px 15px;
+    width: 300px;
+    position: relative;
+}
+
+.search-input {
+    padding: 0 10px;
+    font-size: 16px;
+    font-family: Lato;
+}
+
+.search-icon {
+    color: rgb(237,101,4);
+    font-size: 20px;
+}
+
+.search-result-list {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+}
+
+.search-result-list li {
+    background-color: #FFFFFF;
+    border: 1px solid lightgrey;
+    padding: 15px 35px;
+}
+
+.search-result-list li:hover {
+    background-color: rgb(241, 241, 241);
+}
