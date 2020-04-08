@@ -46,7 +46,8 @@ class Status extends React.Component {
     }
 }
 
-const mSTP = ({ session, entities: { users } }) => {
+const mSTP = ({ errors, session, entities: { users } }) => {
+    console.log(errors)
     return {
         currentUser: users[session.id]
     };
