@@ -5,10 +5,6 @@ class Api::UsersController < ApplicationController
     end
 
     def create
-        # cityint = params[:user][:city_id].to_i
-
-        # @user = User.new(email: params[:user][:email], status: params[:user][:status], name: params[:user][:name], password: params[:user][:password], city_id: cityint)
-
         @user = User.new(user_params)
 
         spot = Spot.create(
@@ -27,11 +23,8 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             login(@user)
-
-            @user.save
-
+            # @user.save
             render "api/users/show"
-
         else
             spot.destroy
             render json: @user.errors.full_messages, status: 422

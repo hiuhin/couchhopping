@@ -10,7 +10,7 @@ class Api::DirectRequestsController < ApplicationController
 
     def create
         @direct_request = DirectRequest.new(direct_request_params)
-            if @direct_request.save!
+            if @direct_request.save
                 render "api/direct_requests/show"
             else
                 render json: @direct_request.errors.full_messages, status: 422

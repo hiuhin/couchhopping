@@ -38,7 +38,15 @@ class Request extends React.Component {
             end: "",
             message: ""
         })
-        this.props.toggleRequestForm();
+        // this.props.toggleRequestForm();
+    }
+
+    renderErrors() {
+        return this.props.errors.map((error,idx) => (
+            <li key={idx} className="errors">
+                {error}
+            </li>
+        ))
     }
 
     render() {
@@ -46,6 +54,8 @@ class Request extends React.Component {
         return (
             <div className="requestform padded">
                 <form>
+                    {this.renderErrors()}
+                    <br/>
                     <div className="multicolumn">
                         <label className="multicolumn-column">
                             Arrival Date<br />

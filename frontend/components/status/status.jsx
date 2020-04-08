@@ -21,7 +21,11 @@ class Status extends React.Component {
     }
 
     renderRequestForm() {
-       return (this.state.showRequestForm === true) ? <RequestFormContainer host={this.props.user} toggleRequestForm={this.toggleRequestForm}/> : "";
+       return (this.state.showRequestForm === true) ? 
+        <RequestFormContainer 
+            host={this.props.user}
+            toggleRequestForm={this.toggleRequestForm}
+        /> : "";
     }
 
     render() {
@@ -46,11 +50,11 @@ class Status extends React.Component {
     }
 }
 
-const mSTP = ({ errors, session, entities: { users } }) => {
-    console.log(errors)
+const mSTP = ({session, entities: { users } }) => {
     return {
         currentUser: users[session.id]
     };
 };
+
 
 export default connect(mSTP, null)(Status);
