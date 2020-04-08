@@ -29,41 +29,6 @@ class SessionForm extends React.Component {
         });
     }
 
-    // handleCity(e) {
-    //     switch (e.currentTarget.value) {
-    //         case "San Francisco":
-    //             this.setState({
-    //                 city_id: 1
-    //             });
-    //             break;
-    //         case "Los Angeles":
-    //             this.setState({
-    //                 city_id: 2
-    //             });
-    //             break;
-    //         case "New York":
-    //             this.setState({
-    //                 city_id: 3
-    //             });
-    //             break;
-    //         case "Austin":
-    //             this.setState({
-    //                 city_id: 4
-    //             });
-    //             break;
-    //         case "Chicago":
-    //             this.setState({
-    //                 city_id: 5
-    //             });
-    //             break;
-    //         case "Atlanta":
-    //             this.setState({
-    //                 city_id: 6
-    //             });
-    //             break;
-    //     }
-    // }
-
     handleCity(e) {
         this.setState({
             city_name: e.currentTarget.value
