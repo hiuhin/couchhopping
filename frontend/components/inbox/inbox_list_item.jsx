@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
 
 import {fetchUser} from '../../actions/user_actions';
@@ -73,7 +74,10 @@ class InboxListItem extends React.Component {
               <div className="inbox-item-right multicolumn-column">
                 <span>
                     <span style={{fontWeight:"bold"}}>{message}</span>
-                    &nbsp; {" 🗓 " + directRequest.start + " → " + directRequest.end}
+                    &nbsp; {" 🗓 " 
+                            + moment(directRequest.start_date, "YYYY-MM-DD").format("ddd MMM D YYYY") 
+                            + " → " 
+                            + moment(directRequest.end_date, "YYYY MM DD").format("ddd MMM D YYYY")}
                     &nbsp; {" 🏠 " + this.props.nights + " nights"}
                 </span>
                 
@@ -98,13 +102,8 @@ class InboxListItem extends React.Component {
 
 const mSTP = ({ session, entities: { users } }, {directRequest}) => {
     const userId = directRequest.user_id === session.id ? directRequest.host_id : directRequest.user_id;
-    const oneDay = 24 * 60 * 60 * 1000;
-    // let startDate = new Date(directRequest.start)
-    let startDate = directRequest.start.split('-');
-    startDate = new Date(startDate[0], startDate[1], startDate[2]);
-    let endDate = directRequest.end.split('-');
-    endDate = new Date(endDate[0], endDate[1], endDate[2]);
-    const nights = Math.round(Math.abs((startDate - endDate) / oneDay));
+    let nights = moment(directRequest.end_date).diff(moment(directRequest.start_date), "days")
+
     return {
         userId,
         user: users[userId],

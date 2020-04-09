@@ -324,8 +324,8 @@ d1 = DirectRequest.create!(
     user_id: u1.id,
     host_id: u10.id,
     status: "Pending", 
-    start: "2021-10-18",
-    end: "2021-10-22",
+    start_date: "2021-10-18",
+    end_date: "2021-10-22",
     message: "Planning to celebrating my birthday at a new town. Will you offer me your place to stay?",
     response: ""
 )
@@ -334,8 +334,8 @@ d2 = DirectRequest.create!(
     user_id: u2.id,
     host_id: u10.id,
     status: "Pending", 
-    start: "2020-12-09",
-    end: "2020-12-12",
+    start_date: "2020-12-09",
+    end_date: "2020-12-12",
     message: "I'd make a great guest because I love to get to know complete strangers. I can even cook for you! Will you respond to me as soon as possible? Thank you.",
     response: ""
 )
@@ -344,8 +344,8 @@ d3 = DirectRequest.create!(
     user_id: u11.id,
     host_id: u10.id,
     status: "Pending", 
-    start: "2021-01-10",
-    end: "2021-01-16",
+    start_date: "2021-01-10",
+    end_date: "2021-01-16",
     message: "Hello there, my name is Anne. I'm planning to visit Austin next year during the holidays and would love to meet locals and hang out. Would you be able to host me?",
     response: ""
 )
@@ -354,8 +354,8 @@ d4 = DirectRequest.create!(
     user_id: u10.id,
     host_id: u11.id,
     status: "Pending", 
-    start: "2023-06-10",
-    end: "2023-06-18",
+    start_date: "2023-06-10",
+    end_date: "2023-06-18",
     message: "I'm planning a low-budget trip and I'll need your hospitality to make it happen. Thank you in advance for your kindness, I will return the favor in the future!",
     response: ""
 )
@@ -364,8 +364,8 @@ d5 = DirectRequest.create!(
     user_id: u10.id,
     host_id: u3.id,
     status: "Pending", 
-    start: "2021-07-27",
-    end: "2021-07-28",
+    start_date: "2021-07-27",
+    end_date: "2021-07-28",
     message: "Every year I try to go visit a new place and this year I plan to visit your city.",
     response: "Yes"
 )
@@ -374,8 +374,8 @@ d6 = DirectRequest.create!(
     user_id: u7.id,
     host_id: u10.id,
     status: "Pending", 
-    start: "2020-03-12",
-    end: "2020-03-15",
+    start_date: "2020-03-12",
+    end_date: "2020-03-15",
     message: "Hello there! I have a work trip coming up and I'm planning to extend an extra few days afterward to explore the area. Would your place be available?",
     response: ""
 )
@@ -384,8 +384,8 @@ d7 = DirectRequest.create!(
     user_id: u10.id,
     host_id: u4.id,
     status: "Pending", 
-    start: "2069-12-24",
-    end: "2069-12-25",
+    start_date: "2069-12-24",
+    end_date: "2069-12-25",
     message: "I know this trip is 50 years from now, but it's a very special day for me and I hope you can accept my request.",
     response: ""
 )
@@ -394,8 +394,8 @@ d8 = DirectRequest.create!(
     user_id: u8.id,
     host_id: u6.id,
     status: "Pending", 
-    start: "2024-02-24",
-    end: "2069-02-28",
+    start_date: "2024-02-24",
+    end_date: "2069-02-28",
     message: "I'm from Arlington and driving up to the city. Please let me know if I can crash at your place. Thank you.",
     response: ""
 )

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
 import {updateDirectRequest } from '../../actions/direct_request_actions';
 import Response from './response';
+import moment from 'moment';
 
 class DirectRequestItem extends React.Component {
     constructor(props) {
@@ -65,14 +66,10 @@ class DirectRequestItem extends React.Component {
 }
 
 
-const mSTP = ({ entities: { users } }, { requestToUser: { user_id, start, end, message } }) => {
-    const oneDay = 24 * 60 * 60 * 1000;
-    startDate = new Date(start)
-    let startDate = start.split('-');
-    startDate = new Date(startDate[0], startDate[1], startDate[2]);
-    let endDate = end.split('-');
-    endDate = new Date(endDate[0], endDate[1], endDate[2]);
-    const nights = Math.round(Math.abs((startDate - endDate) / oneDay));
+const mSTP = ({ entities: { users } }, { requestToUser: { user_id, start_date, end_date, message } }) => {
+   let start = moment(start_date, "YYYY MM DD").format("ddd MMM D YYYY")
+    let end = moment(end_date, "YYYY MM DD").format("ddd MMM D YYYY")
+    let nights = moment(end_date, "YYYY MM DD").diff(moment(start_date, "YYYY MM DD"), "days");
 
     return {
         // requestToUser: requestToUser,

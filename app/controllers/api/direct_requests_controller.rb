@@ -42,8 +42,8 @@ class Api::DirectRequestsController < ApplicationController
             :user_id,
             :host_id,
             :status,
-            :start,
-            :end,
+            :start_date,
+            :end_date,
             :message,
             :response
         )
