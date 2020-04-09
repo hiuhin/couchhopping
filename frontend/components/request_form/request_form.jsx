@@ -8,8 +8,8 @@ class Request extends React.Component {
             user_id: this.props.currentUser.id,
             host_id: this.props.host.id,
             status: "Pending",
-            start: "",
-            end: "",
+            start_date: "",
+            end_date: "",
             message: "",
             response: "",
         }
@@ -34,14 +34,14 @@ class Request extends React.Component {
 
     clearForm() {
         this.setState({
-            start: "",
-            end: "",
+            start_date: "",
+            end_date: "",
             message: ""
         });
     }
 
     validateEndAfterStart() {
-        return this.state.start <= this.state.end
+        return this.state.start_date <= this.state.end_date
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -82,8 +82,8 @@ class Request extends React.Component {
                   <br />
                   <input
                     type="date"
-                    onChange={this.update("start")}
-                    value={this.state.start}
+                    onChange={this.update("start_date")}
+                    value={this.state.start_date}
                     required
                   />
                 </label>
@@ -92,8 +92,8 @@ class Request extends React.Component {
                   <br />
                   <input
                     type="date"
-                    onChange={this.update("end")}
-                    value={this.state.end}
+                    onChange={this.update("end_date")}
+                    value={this.state.end_date}
                     required
                   />
                 </label>
