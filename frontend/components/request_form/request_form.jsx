@@ -15,7 +15,6 @@ class Request extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearForm = this.clearForm.bind(this);
-        this.renderSuccessSubmitionNotification = this.renderSuccessSubmitionNotification.bind(this);
     }
     
     update(field) {
@@ -27,9 +26,11 @@ class Request extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createDirectRequest(this.state)
-            .then(this.renderSuccessSubmitionNotification)
-            .then(this.clearForm)
-            .then(this.props.toggleRequestForm);
+        .then(console.log("test"))
+        .then(this.props.toggleSuccessNote)
+        .then(this.clearForm)
+        .then(this.props.toggleRequestForm)
+        .then(setTimeout(this.props.toggleSuccessNote, 2000))
     }
 
     clearForm() {
@@ -40,10 +41,6 @@ class Request extends React.Component {
         });
     }
 
-    validateEndAfterStart() {
-        return this.state.start_date <= this.state.end_date
-    }
-
     componentDidUpdate(prevProps, prevState) {
         if ((prevProps.errors.length > 0) && (prevProps.errors === this.props.errors)) {
             this.props.clearDirectRequestErrors();
@@ -52,14 +49,6 @@ class Request extends React.Component {
 
     componentWillUnmount(){
         this.props.clearDirectRequestErrors();
-    }
-
-    renderSuccessSubmitionNotification() {
-        return (
-            <div style={{fontSize: "600px"}}>
-                Success!
-            </div>
-        )
     }
 
     renderErrors() {

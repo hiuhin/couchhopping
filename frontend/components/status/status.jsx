@@ -8,24 +8,44 @@ class Status extends React.Component {
         super(props);
 
         this.state = {
-            showRequestForm: false
+            showRequestForm: false,
+            showSuccessNote: false
         };
 
         this.renderRequestForm = this.renderRequestForm.bind(this);
         this.toggleRequestForm = this.toggleRequestForm.bind(this);
+        this.renderSuccessNote = this.renderSuccessNote.bind(this);
+        this.toggleSuccessNote = this.toggleSuccessNote.bind(this);
     }
     
 
     toggleRequestForm() {
-        this.setState({showRequestForm:!this.state.showRequestForm});
+        this.setState({showRequestForm: !this.state.showRequestForm});
+    }
+
+    toggleSuccessNote() {
+        this.setState({showSuccessNote: !this.state.showSuccessNote})
     }
 
     renderRequestForm() {
        return (this.state.showRequestForm === true) ? 
         <RequestFormContainer 
             host={this.props.user}
-            toggleRequestForm={this.toggleRequestForm}
-        /> : "";
+            toggleRequestForm={this.toggleRequestForm} 
+            toggleSuccessNote={this.toggleSuccessNote}
+                 
+    /> : "";
+}
+
+    renderSuccessNote() {
+        if (this.state.showSuccessNote) {
+            return (
+              <div className="success-note">
+                <p>Request Sent Successfully!</p>
+                <p>Check Inbox for Updates</p>
+              </div>
+            );  
+        }  
     }
 
     render() {
@@ -40,6 +60,7 @@ class Status extends React.Component {
         }
         return (
             <div>
+                {this.renderSuccessNote()}
                 <div className="status">
                     <h2 className={(user.status === "Accepting Guests") ? "green" : "red"}>{user.status}</h2>
                     {display}
