@@ -1,5 +1,5 @@
 import React from 'react';
-import { createDirectRequest } from '../../util/direct_request_util';
+import moment from 'moment';
 
 class Request extends React.Component {
     constructor(props) {
@@ -11,9 +11,11 @@ class Request extends React.Component {
             start: "",
             end: "",
             message: "",
-            response: ""
+            response: "",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearForm = this.clearForm.bind(this);
+        this.renderSuccessSubmitionNotification = this.renderSuccessSubmitionNotification.bind(this);
     }
     
     update(field) {
@@ -22,23 +24,42 @@ class Request extends React.Component {
         }
     }
 
-    updateDate(field) {
-        return e => {
-            let date = e.currentTarget.value;
-                date = new Date(date);
-            this.setState({ [field]: date })
-        }    
-    }
-
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createDirectRequest(this.state);
+        this.props.createDirectRequest(this.state)
+            .then(this.renderSuccessSubmitionNotification)
+            .then(this.clearForm)
+            .then(this.props.toggleRequestForm);
+    }
+
+    clearForm() {
         this.setState({
             start: "",
             end: "",
             message: ""
-        })
-        // this.props.toggleRequestForm();
+        });
+    }
+
+    validateEndAfterStart() {
+        return this.state.start <= this.state.end
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if ((prevProps.errors.length > 0) && (prevProps.errors === this.props.errors)) {
+            this.props.clearDirectRequestErrors();
+        }
+    }
+
+    componentWillUnmount(){
+        this.props.clearDirectRequestErrors();
+    }
+
+    renderSuccessSubmitionNotification() {
+        return (
+            <div style={{fontSize: "600px"}}>
+                Success!
+            </div>
+        )
     }
 
     renderErrors() {
@@ -50,40 +71,60 @@ class Request extends React.Component {
     }
 
     render() {
+        
         const {toggleRequestForm} = this.props;
         return (
-            <div className="requestform padded">
-                <form>
-                    {this.renderErrors()}
-                    <br/>
-                    <div className="multicolumn">
-                        <label className="multicolumn-column">
-                            Arrival Date<br />
-                            <input type="date" onChange={this.updateDate("start")}/>
-                        </label>
-                        <label className="multicolumn-column">
-                            Departure Date<br />
-                            <input type="date" onChange={this.updateDate("end")}/>
-                        </label>
-                    </div>
-                    <br/>
-                    <label>
-                        Message<br />
-                        <textarea 
-                            name="message" id="" cols="30" rows="5" 
-                            onChange={this.update("message")}
-                            placeholder="Introduce yourself with a nice note describing your trip, why you'd like to stay, and why you'd be a great guest." />
-                    </label>
-                    <div className="requestFormButtons">
-                        <button className="cancel" onClick={() => toggleRequestForm()}>Cancel</button>
-                        <button onClick={this.handleSubmit}>Send</button>
-                    </div>
-                </form>
-                
-            </div>
-        )
+          <div className="requestform padded">
+            <form>
+              <div className="multicolumn">
+                <label className="multicolumn-column">
+                  Arrival Date
+                  <br />
+                  <input
+                    type="date"
+                    onChange={this.update("start")}
+                    value={this.state.start}
+                    required
+                  />
+                </label>
+                <label className="multicolumn-column">
+                  Departure Date
+                  <br />
+                  <input
+                    type="date"
+                    onChange={this.update("end")}
+                    value={this.state.end}
+                    required
+                  />
+                </label>
+              </div>
+              <br />
+              <label>
+                Message
+                <br />
+                <textarea
+                  name="message"
+                  id=""
+                  cols="30"
+                  rows="5"
+                  onChange={this.update("message")}
+                  placeholder="Introduce yourself with a nice note describing your trip, why you'd like to stay, and why you'd be a great guest."
+                  value={this.state.message}
+                  required
+                />
+              </label>
+              <div className="errors-container">{this.renderErrors()}</div>
+              <div className="requestFormButtons">
+                <button className="cancel" onClick={() => toggleRequestForm()}>
+                  Cancel
+                </button>
+                <button onClick={this.handleSubmit}>Send</button>
+              </div>
+            </form>
+          </div>
+        );
     }
-
+    
 }
 
 export default Request;

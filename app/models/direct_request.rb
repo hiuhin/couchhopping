@@ -9,8 +9,6 @@ class DirectRequest < ApplicationRecord
     private
 
     def start_must_come_before_end
-        errors[:arrival_date] << 'must specify an arrival date' unless :start
-        errors[:departure_date] << 'must specify a departure date' unless :end
-        errors[:arrival_date] << 'must come before departure date' if :start > :end
+        errors[:depature_date] << 'must come after arrival date' if :start >= :end
     end
 end
