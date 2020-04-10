@@ -26,11 +26,10 @@ class Request extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createDirectRequest(this.state)
-        .then(console.log("test"))
         .then(this.props.toggleSuccessNote)
         .then(this.clearForm)
         .then(this.props.toggleRequestForm)
-        .then(setTimeout(this.props.toggleSuccessNote, 2000))
+        .then(() => setTimeout(this.props.toggleSuccessNote, 1000))
     }
 
     clearForm() {
