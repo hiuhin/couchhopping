@@ -33,7 +33,8 @@ export class SearchBar extends Component {
         return (
           <div className="searchbar">
             <div className="searchbar-left">
-              {this.state.searchOption} &nbsp; {"▾"}
+              {this.state.searchOption} 
+              {/* &nbsp; {"▾"} */}
             </div>
             <form 
                 className="searchbar-right"
