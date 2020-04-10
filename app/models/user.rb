@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_one_attached :photo
+
     belongs_to :city
     belongs_to :spot
     has_many :direct_requests

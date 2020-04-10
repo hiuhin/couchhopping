@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.delete_all
 Spot.delete_all
 City.delete_all
@@ -160,12 +152,13 @@ u1 = User.create!(
     about_me: Faker::Quote.matz,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Female",
     language: "English",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
     spot_id: s1.id
 )
+
 
 u2 = User.create!(
     email: Faker::Internet.email,
@@ -176,7 +169,7 @@ u2 = User.create!(
     about_me: Faker::Quote.matz,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Female",
     language: "English",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -191,7 +184,7 @@ u3 = User.create!(
     about_me: Faker::Quote.matz,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Female",
     language: "English, Spanish",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -206,7 +199,7 @@ u4 = User.create!(
     about_me: Faker::Quote.matz,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Female",
     language: "English",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -221,7 +214,7 @@ u5 = User.create!(
     about_me: Faker::Quote.matz,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Male",
     language: "English, French",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -236,7 +229,7 @@ u6 = User.create!(
     about_me: Faker::Quote.famous_last_words,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Male",
     language: "English",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -251,7 +244,7 @@ u7 = User.create!(
     about_me: Faker::Quote.famous_last_words,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Male",
     language: "English",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -266,7 +259,7 @@ u8 = User.create!(
     about_me: Faker::Quote.famous_last_words,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Male",
     language: "English, Chinese",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -281,7 +274,7 @@ u9 = User.create!(
     about_me: Faker::Quote.famous_last_words,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Male",
     language: "English",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -296,7 +289,7 @@ u10 = User.create!(
     about_me: Faker::Quote.matz,
     city_id: [c1,c2,c3,c4,c5,c6].sample.id,
     password: '123456',
-    gender: Faker::Gender.binary_type,
+    gender: "Female",
     language: "English",
     book: Faker::Book.title,
     movie: Faker::Movie.quote,
@@ -318,6 +311,21 @@ u11 = User.create!(
     movie: "You got a dream. You gotta protect it. People can't do somethin' themselves, they wanna tell you you can't do it. If you want somethin', go get it. Period.",
     spot_id: s11.id
 )
+
+
+u1.photo.attach( io: File.open("#{Rails.root}/db/images/f1.jpg"), filename: "f1.jpg")
+u2.photo.attach( io: File.open("#{Rails.root}/db/images/f2.jpg"), filename: "f2.jpg")
+u3.photo.attach( io: File.open("#{Rails.root}/db/images/f3.jpg"), filename: "f3.jpg")
+u4.photo.attach( io: File.open("#{Rails.root}/db/images/f4.jpg"), filename: "f4.jpg")
+u5.photo.attach( io: File.open("#{Rails.root}/db/images/m1.jpg"), filename: "m1.jpg")
+u6.photo.attach( io: File.open("#{Rails.root}/db/images/m2.jpg"), filename: "m2.jpg")
+u7.photo.attach( io: File.open("#{Rails.root}/db/images/m3.jpg"), filename: "m3.jpg")
+u8.photo.attach( io: File.open("#{Rails.root}/db/images/m4.jpg"), filename: "m4.jpg")
+u9.photo.attach( io: File.open("#{Rails.root}/db/images/m5.jpg"), filename: "m5.jpg")
+u10.photo.attach( io: File.open("#{Rails.root}/db/images/f5.jpg"), filename: "f5.jpg")
+u11.photo.attach( io: File.open("#{Rails.root}/db/images/f6.jpg"), filename: "f6.jpg")
+
+
 
 
 d1 = DirectRequest.create!(

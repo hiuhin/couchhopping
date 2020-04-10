@@ -9,11 +9,13 @@ class CityShow extends React.Component {
     }
 
     componentDidMount() {
+      console.log("ComDIDCMount")
         this.props.fetchCity(this.props.match.params.cityId);
+        this.props.fetchUsers(this.props.match.params.cityId);
       }
       
-      componentDidUpdate() {
-        this.props.fetchUsers(this.props.match.params.cityId);
+      componentDidUpdate(prevProps, prevState) {
+    
       }
 
     render() {

@@ -46,22 +46,39 @@ class DirectRequestItem extends React.Component {
         
         if (this.props.requester === undefined) return null;
         return (
-            <div className={this.state.className}>
-                <div className="requestcard multicolumn">
-                    <div>
-                        <Link to={`/profile/${requester.id}`}><p className="name">{requester.name}</p></Link>
-                        <Link to={`/cities/${requester.city_id}`}><p>{requester.city}</p></Link>
-                        <br/>
-                        <span>{nights}</span>
-                        <span>{dates}</span>
-                    </div>
-                    <div>
-                        <button onClick={this.toggleResponseForm}>Respond</button>
-                    </div>
-                </div>
-                <div className={this.state.showResponseForm === true ? "formOpen" : ""}>{this.renderResponseForm()}</div>
+          <div className={this.state.className}>
+            <div className="requestcard">
+              <div className="profile-thumb">
+                <img
+                  src={requester.photoURL}
+                  className="profile-thumb"
+                  alt="profile-thumb"
+                />
+              </div>
+              <div className="name-city">
+                <Link to={`/profile/${requester.id}`}>
+                  <span className="name">{requester.name}</span>
+                </Link>
+                <br />
+                <Link to={`/cities/${requester.city_id}`}>
+                  <span>{requester.city}</span>
+                </Link>
+                <br />
+                <br />
+                <span>{nights}</span>
+                <span>{dates}</span>
+              </div>
+              <div className="respond-button">
+                <button onClick={this.toggleResponseForm}>Respond</button>
+              </div>
             </div>
-        )
+            <div
+              className={this.state.showResponseForm === true ? "formOpen" : ""}
+            >
+              {this.renderResponseForm()}
+            </div>
+          </div>
+        );
     }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment';
+import {Link} from 'react-router-dom';
 
 
 import {fetchUser} from '../../actions/user_actions';
@@ -60,32 +61,34 @@ class InboxListItem extends React.Component {
         const message = this.generateMessage();
         return (
           <div className="inbox-item-container ">
-            <div className="card multicolumn" onClick={this.toggleDetails}>
-                <div className="multicolumn-column align-left inbox-item-left">
+            <div className="card" onClick={this.toggleDetails}>
+                <div className="inbox-item-left">
+                    <img src={user.photoURL} className="profile-thumb" alt="profile-thumb"/>
+                </div>
+                <div className="align-left inbox-item-center">
                 <span className="name">                   
-                        {user.name}               
+                        <Link to={`/profile/${user.id}`}>{user.name}</Link>              
                 </span>
                 <br/>
                 <span className="city">
-               
-                        {user.city}
+                        <Link to={`/cities/${user.city_id}`}>{user.city}</Link>
                 </span>
               </div>
-              <div className="inbox-item-right multicolumn-column">
+              <div className="inbox-item-right">
                 <span>
                     <span style={{fontWeight:"bold"}}>{message}</span>
                     &nbsp; {" 🗓 " 
-                            + moment(directRequest.start_date, "YYYY-MM-DD").format("ddd MMM D YYYY") 
+                            + moment(directRequest.start_date, "YYYY-MM-DD").format("ddd MMM D") 
                             + " → " 
-                            + moment(directRequest.end_date, "YYYY MM DD").format("ddd MMM D YYYY")}
+                            + moment(directRequest.end_date, "YYYY MM DD").format("ddd MMM D")}
                     &nbsp; {" 🏠 " + this.props.nights + " nights"}
                 </span>
                 
                 <span className="inbox-item-message">
                     {this.state.showDetails ? 
                         directRequest.message : 
-                        directRequest.message.slice(0, 75) + 
-                        (directRequest.message.length > 75 ? "..." : "")
+                        directRequest.message.slice(0, 70) + 
+                        (directRequest.message.length > 70 ? "..." : "")
                     }
                 </span>
               </div>

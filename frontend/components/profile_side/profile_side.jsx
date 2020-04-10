@@ -13,7 +13,7 @@ class ProfileSide extends React.Component {
         
         return (
             <div className="profileside">
-                <FontAwesomeIcon icon={faUserCircle} />
+                <img src={user.photoURL} alt="profile picture"/>
                 <br />
                 <h2>{user.name}</h2>
                 <h3>{city}</h3>
