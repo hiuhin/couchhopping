@@ -39,7 +39,10 @@ export class SearchBar extends Component {
                 className="searchbar-right"
                 onSubmit={() => this.handleSelectSearchResultItem(firstResult.id)}
             >
-              <i className="fas fa-search search-icon"></i>
+              <i 
+                onClick={() => this.handleSelectSearchResultItem(firstResult.id)}
+                className="fas fa-search search-icon">
+              </i>
               <input
                 type="text"
                 className="search-input"
