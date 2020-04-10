@@ -10,8 +10,11 @@ class CityShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchCity(this.props.match.params.cityId);
+      }
+      
+      componentDidUpdate() {
         this.props.fetchUsers(this.props.match.params.cityId);
-    }
+      }
 
     render() {
         if (this.props.city === undefined) return null;

@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import { logout, clearSessionErrors } from '../../actions/session_actions';
 import NavBar from './nav_bar';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import{fetchCities} from '../../actions/city_actions';
 
-const mSTP = ({ session, entities: { users } }) => {
+const mSTP = ({ session, entities: { users} }) => {
     return {
-        currentUser: users[session.id] 
+        currentUser: users[session.id],
     };
 };
 
@@ -13,7 +14,8 @@ const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
     login: () => dispatch(openModal('login')),
     closeModal: () => dispatch(closeModal()),
-    clearSessionErrors: () => dispatch(clearSessionErrors())
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
+    fetchCities: () => dispatch(fetchCities())
 });
 
 export default connect(mSTP, mDTP)(NavBar);

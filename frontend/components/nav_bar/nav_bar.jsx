@@ -8,6 +8,10 @@ class NavBar extends React.Component {
         this.handleLogin = this.handleLogin.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchCities();
+    }
+
     handleLogin() {
         this.props.clearSessionErrors();
         this.props.login();
