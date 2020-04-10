@@ -5,6 +5,41 @@ import { Link } from 'react-router-dom';
 class DashboardSide extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            showDropDown: false
+        }
+        this.toggleDropDown = this.toggleDropDown.bind(this);
+        this.renderDropDown = this.renderDropDown.bind(this);
+    }
+
+    toggleDropDown() {
+        this.setState({showDropDown: !this.state.showDropDown})
+    }
+
+    renderDropDown() {    
+        if (this.state.showDropDown) {
+            return (
+              <div className="drop-down">
+                <p
+                  onClick={() => this.changeStatus("Accepting Guests")}
+                  className="green"
+                >
+                  Accepting Guests
+                </p>
+                <p
+                  onClick={() => this.changeStatus("Not Accepting Guests")}
+                  className="red"
+                >
+                  Not Accepting Guests
+                </p>
+              </div>
+            );
+        }
+    }
+
+    changeStatus(status) {
+        this.props.currentUser.status = status;
+        this.toggleDropDown();
     }
 
     render() {
@@ -22,7 +57,12 @@ class DashboardSide extends React.Component {
                         </Link>
                 </div>
                 <div className="dashboardstatus block">
-                    <p>{currentUser.status}</p>
+                    <p
+                        className={currentUser.status === "Accepting Guests" ? "green" : "red"}
+                        onClick={this.toggleDropDown}>
+                            {currentUser.status + " ▾ "}
+                        {this.renderDropDown()}
+                    </p>
                 </div>
 
                 <div className="profiletitle block">
@@ -37,7 +77,7 @@ class DashboardSide extends React.Component {
                     <h3> Advertise Here </h3>
                     <h4>
                         <a href="mailto:hiuhin@gmail.com?Subject=Advertising%20On%20CouchHopping" target="_top">
-                            ➠ Click Here To Learn More
+                            ➠ Click Here To Contact Me
                         </a>
                     </h4>
                 </div>
