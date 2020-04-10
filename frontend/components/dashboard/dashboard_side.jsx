@@ -58,8 +58,8 @@ class DashboardSide extends React.Component {
                 </div>
                 <div className="dashboardstatus block">
                     <p
-                        onClick={this.toggleDropDown}>
-                        className={currentUser.status === "Accepting Guests" ? "green" : "red"}
+                        onClick={this.toggleDropDown}
+                        className={currentUser.status === "Accepting Guests" ? "green" : "red"}>
                             {currentUser.status + " ▾ "}
                         {this.renderDropDown()}
                     </p>
