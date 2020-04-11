@@ -287,7 +287,7 @@ u10 = User.create!(
     age: Faker::Number.within(range: 18..80),
     job: "Student",
     about_me: Faker::Quote.matz,
-    city_id: c4.sample.id,
+    city_id: c4.id,
     password: '123456',
     gender: "Female",
     language: "English",
