@@ -1,7 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class CityShow extends React.Component {
     constructor(props) {

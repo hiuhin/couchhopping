@@ -1,6 +1,5 @@
 import React from 'react';
 import SpotContainer from '../../components/spots/spot_container';
-// import About from '../../components/about/about';
 import AboutContainer from '../../components/about/about';
 
 class ProfileNav extends React.Component {

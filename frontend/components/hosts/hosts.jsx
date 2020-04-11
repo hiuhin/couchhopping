@@ -22,9 +22,6 @@ class Hosts extends React.Component {
                 {hosts.map(host => (
                     <li>{host.name}</li>
                 ))}
-                {/* {selectedHosts.map(host => (
-                    <li>{host.name}</li>
-                ))} */}
             </div>
         )
     }
