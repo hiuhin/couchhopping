@@ -25,19 +25,20 @@ class InboxList extends React.Component {
         }
 
         const filteredList = filterList();
-
+        
         return (
             <ul>
-                {filteredList.map((dr, id) => ( 
-                    <li 
-                        key={id}
-                        onClick={this.toggleDetails}
-                    >
-                        <InboxListItem 
-                            directRequest={dr}
-                        />            
-                    </li>
-                ))}
+                {filteredList.length === 0 
+                    ? <p><br/>You Have No Messages</p>
+                    : filteredList.map((dr, id) => ( 
+                        <li 
+                          key={id}
+                          onClick={this.toggleDetails}
+                        >
+                        <InboxListItem directRequest={dr}/>    
+                        </li>
+                    ))
+                }
             </ul>
         )
     }
