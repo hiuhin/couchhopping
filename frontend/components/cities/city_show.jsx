@@ -11,6 +11,7 @@ class CityShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchUsers(this.props.match.params.cityId);
+        window.scrollTo(0, 0);
     }
 
     componentDidUpdate(prevProps) {

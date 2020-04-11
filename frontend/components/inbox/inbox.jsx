@@ -12,7 +12,7 @@ class Inbox extends React.Component {
 
     componentDidMount() {
         this.props.fetchDirectRequests();
-
+        window.scrollTo(0, 0);
     }
 
     changePage(page) {
