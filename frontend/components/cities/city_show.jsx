@@ -6,22 +6,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class CityShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+          currPageId: null
+        }
     }
 
     componentDidMount() {
-      console.log("ComDIDCMount")
-        this.props.fetchCity(this.props.match.params.cityId);
         this.props.fetchUsers(this.props.match.params.cityId);
-      }
-      
-      componentDidUpdate(prevProps, prevState) {
-    
-      }
+    }
 
+    componentDidUpdate(prevProps) {
+      if (prevProps.match.params.cityId !== this.props.match.params.cityId) {
+        this.props.fetchUsers(this.props.match.params.cityId)
+      }
+    }
+          
     render() {
+  
         if (this.props.city === undefined) return null;
         const { currentUser, hosts, city} = this.props;
         const selectedHosts = hosts.filter(host => host.city_id === city.id && host.id !== currentUser.id)
+
         return (
           <div className="cityshow">
             <img src={this.props.city.photoURL} className="citybanner" />
@@ -39,7 +44,7 @@ class CityShow extends React.Component {
                     {selectedHosts.map((host) => (
                         <Link key={host.id} to={`/profile/${host.id}`}>
                         <li>
-                            <FontAwesomeIcon icon={faUserCircle} />
+                          <img src={host.photoURL} className="profile-thumb" alt="profile-thumb"/>
                             <br />
                             {host.name}
                         </li>

@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { logout, clearSessionErrors } from '../../actions/session_actions';
 import NavBar from './nav_bar';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import{fetchCities} from '../../actions/city_actions';
 
 const mSTP = ({ session, entities: { users} }) => {
     return {
@@ -15,7 +14,6 @@ const mDTP = dispatch => ({
     login: () => dispatch(openModal('login')),
     closeModal: () => dispatch(closeModal()),
     clearSessionErrors: () => dispatch(clearSessionErrors()),
-    fetchCities: () => dispatch(fetchCities())
 });
 
 export default connect(mSTP, mDTP)(NavBar);

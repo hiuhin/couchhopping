@@ -1,15 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import SearchBar from './search_bar';
+import SearchBarContainer from './search_bar_container';
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.handleLogin = this.handleLogin.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.fetchCities();
     }
 
     handleLogin() {
@@ -19,7 +15,6 @@ class NavBar extends React.Component {
 
     render() {
         const { currentUser, logout } = this.props;
-        
         const sessionLinks = () => (
             <div className="navbar">
                 <div className="navbarcontent">
@@ -48,7 +43,7 @@ class NavBar extends React.Component {
                             <img className="logo" src={window.logoURL} />
                         </Link>
                         <div className="multicolumn-column">
-                            <SearchBar />
+                            <SearchBarContainer />
                         </div>
                     </div>
 
