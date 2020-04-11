@@ -17,13 +17,13 @@ class Api::UsersController < ApplicationController
         )
 
         @user.spot_id = spot.id
-
+        
         city = City.find_by(name: params[:user][:city_name])
         @user.city_id = city.id if city
-
+        
         if @user.save
             login(@user)
-            # @user.save
+            @user.photo.attach( io: File.open("#{Rails.root}/db/images/default-profile-thumb.png"), filename: "default-profile-thumb.png")
             render "api/users/show"
         else
             spot.destroy
