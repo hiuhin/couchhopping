@@ -63,7 +63,9 @@ class InboxListItem extends React.Component {
           <div className="inbox-item-container ">
             <div className="card" onClick={this.toggleDetails}>
                 <div className="inbox-item-left">
-                    <img src={user.photoURL} className="profile-thumb" alt="profile-thumb"/>
+                    <Link to={`/profile/${requester.id}`}>
+                        <img src={user.photoURL} className="profile-thumb" alt="profile-thumb"/>
+                    </Link>
                 </div>
                 <div className="align-left inbox-item-center">
                 <span className="name">                   

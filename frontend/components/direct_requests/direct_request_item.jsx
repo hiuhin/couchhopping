@@ -49,11 +49,12 @@ class DirectRequestItem extends React.Component {
           <div className={this.state.className}>
             <div className="requestcard">
               <div className="profile-thumb">
-                <img
+                <Link to={`/profile/${requester.id}`}><img
                   src={requester.photoURL}
                   className="profile-thumb"
                   alt="profile-thumb"
                 />
+                </Link>
               </div>
               <div className="name-city">
                 <Link to={`/profile/${requester.id}`}>
