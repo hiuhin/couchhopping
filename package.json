@@ -47,6 +47,6 @@
   },
   "homepage": "https://github.com/hiuhin/couchhopping#readme",
   "devDependencies": {
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.12"
   }
 }
